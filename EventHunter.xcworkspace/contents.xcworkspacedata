@@ -5,6 +5,9 @@
       location = "group:Modules/EventHunter/EventHunter.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Modules/mNetwork/mNetwork.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
