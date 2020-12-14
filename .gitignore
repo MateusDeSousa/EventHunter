@@ -1,0 +1,6 @@
+Pods/
+Podfile.lock
+EventHunter.xcworkspace/xcuserdata
+
+Modules/EventHunter/EventHunter.xcodeproj/project.xcworkspace/xcuserdata
+Modules/EventHunter/EventHunter.xcodeproj/xcuserdata
