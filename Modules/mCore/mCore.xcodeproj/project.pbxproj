@@ -11,6 +11,10 @@
 		85A24F792588D77800692C8E /* mCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F782588D77800692C8E /* mCoreTests.swift */; };
 		85A24F7B2588D77800692C8E /* mCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A24F6D2588D77800692C8E /* mCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85A24F8E2588D82600692C8E /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F8D2588D82600692C8E /* UIViewExtension.swift */; };
+		85A24F922588DE7900692C8E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F912588DE7900692C8E /* UIColorExtension.swift */; };
+		85A24FA82589045100692C8E /* DiscardableImageCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24FA62589045100692C8E /* DiscardableImageCacheItem.swift */; };
+		85A24FA92589045100692C8E /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24FA72589045100692C8E /* CachedImageView.swift */; };
+		8984DD929EAE4D2A118AAC91 /* Pods_mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838958D57A4CD9EF2CD0B77B /* Pods_mCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		838958D57A4CD9EF2CD0B77B /* Pods_mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A24F6A2588D77800692C8E /* mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A24F6D2588D77800692C8E /* mCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCore.h; sourceTree = "<group>"; };
 		85A24F6E2588D77800692C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +36,11 @@
 		85A24F782588D77800692C8E /* mCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mCoreTests.swift; sourceTree = "<group>"; };
 		85A24F7A2588D77800692C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A24F8D2588D82600692C8E /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		85A24F912588DE7900692C8E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		85A24FA62589045100692C8E /* DiscardableImageCacheItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardableImageCacheItem.swift; sourceTree = "<group>"; };
+		85A24FA72589045100692C8E /* CachedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
+		8ABD88E8BA6F733EC0DCC860 /* Pods-mCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCore.debug.xcconfig"; path = "Target Support Files/Pods-mCore/Pods-mCore.debug.xcconfig"; sourceTree = "<group>"; };
+		CC2B4DBC76ED74A533EE81C0 /* Pods-mCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mCore.release.xcconfig"; path = "Target Support Files/Pods-mCore/Pods-mCore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8984DD929EAE4D2A118AAC91 /* Pods_mCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5700992C85A83939FB91406D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				838958D57A4CD9EF2CD0B77B /* Pods_mCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		772A742CF764CDE79848E2F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8ABD88E8BA6F733EC0DCC860 /* Pods-mCore.debug.xcconfig */,
+				CC2B4DBC76ED74A533EE81C0 /* Pods-mCore.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../../Pods;
+			sourceTree = "<group>";
+		};
 		85A24F602588D77800692C8E = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +88,8 @@
 				85A24F6C2588D77800692C8E /* Config */,
 				85A24F772588D77800692C8E /* mCoreTests */,
 				85A24F6B2588D77800692C8E /* Products */,
+				772A742CF764CDE79848E2F2 /* Pods */,
+				5700992C85A83939FB91406D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +123,7 @@
 		85A24F8B2588D7CF00692C8E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				85A24FA42589041800692C8E /* Components */,
 				85A24F8C2588D81200692C8E /* Extensions */,
 			);
 			path = Sources;
@@ -101,8 +133,26 @@
 			isa = PBXGroup;
 			children = (
 				85A24F8D2588D82600692C8E /* UIViewExtension.swift */,
+				85A24F912588DE7900692C8E /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		85A24FA42589041800692C8E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				85A24FA52589042300692C8E /* CachedImageView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		85A24FA52589042300692C8E /* CachedImageView */ = {
+			isa = PBXGroup;
+			children = (
+				85A24FA72589045100692C8E /* CachedImageView.swift */,
+				85A24FA62589045100692C8E /* DiscardableImageCacheItem.swift */,
+			);
+			path = CachedImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85A24F7E2588D77800692C8E /* Build configuration list for PBXNativeTarget "mCore" */;
 			buildPhases = (
+				3DB3B583436AB4420E7BCDD9 /* [CP] Check Pods Manifest.lock */,
 				85A24F652588D77800692C8E /* Headers */,
 				85A24F662588D77800692C8E /* Sources */,
 				85A24F672588D77800692C8E /* Frameworks */,
@@ -209,12 +260,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3DB3B583436AB4420E7BCDD9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		85A24F662588D77800692C8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				85A24F8E2588D82600692C8E /* UIViewExtension.swift in Sources */,
+				85A24F922588DE7900692C8E /* UIColorExtension.swift in Sources */,
+				85A24FA92589045100692C8E /* CachedImageView.swift in Sources */,
+				85A24FA82589045100692C8E /* DiscardableImageCacheItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +440,7 @@
 		};
 		85A24F7F2588D77800692C8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ABD88E8BA6F733EC0DCC860 /* Pods-mCore.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -390,6 +470,7 @@
 		};
 		85A24F802588D77800692C8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC2B4DBC76ED74A533EE81C0 /* Pods-mCore.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
