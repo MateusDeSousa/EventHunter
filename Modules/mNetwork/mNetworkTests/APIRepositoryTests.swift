@@ -27,7 +27,7 @@ class APIRepositoryTests: XCTestCase {
         wait(for: [expactation], timeout: 4.0)
     }
     
-    func testFetchEvents() {
+    func testGetEventWithId() {
         let expactation = XCTestExpectation(description: "get specific event")
         
         let api = APIRepository()
