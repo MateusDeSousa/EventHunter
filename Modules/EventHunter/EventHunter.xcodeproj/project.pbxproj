@@ -3,16 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		611A0E38BF0DB35F1A55A369 /* Pods_EventHunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D5D3020846A0CBD06B2A75 /* Pods_EventHunter.framework */; };
 		85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; };
 		85472C30258851C100B8739F /* mNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		85472C37258854D700B8739F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C36258854D700B8739F /* EventViewController.swift */; };
+		85472C392588554400B8739F /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C382588554400B8739F /* EventViewModel.swift */; };
 		85627D272587F937009DF0C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85627D262587F937009DF0C8 /* AppDelegate.swift */; };
 		85627D302587F938009DF0C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85627D2F2587F938009DF0C8 /* Assets.xcassets */; };
 		85627D332587F938009DF0C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85627D312587F938009DF0C8 /* LaunchScreen.storyboard */; };
-		96385E6F118B9292F3DC0065 /* libPods-EventHunter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0116474FBFAA7405DAD81B23 /* libPods-EventHunter.a */; };
+		85A24F5C2588D24500692C8E /* ListEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F5B2588D24500692C8E /* ListEventsViewModel.swift */; };
+		85A24F5F2588D5D000692C8E /* EventCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */; };
+		85A24F872588D7B300692C8E /* mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F862588D7B300692C8E /* mCore.framework */; };
+		85A24F882588D7B300692C8E /* mCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F862588D7B300692C8E /* mCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +29,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				85472C30258851C100B8739F /* mNetwork.framework in Embed Frameworks */,
+				85A24F882588D7B300692C8E /* mCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,15 +37,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0116474FBFAA7405DAD81B23 /* libPods-EventHunter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EventHunter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		064C56162A534AE0442F897C /* Pods-EventHunter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventHunter.release.xcconfig"; path = "Target Support Files/Pods-EventHunter/Pods-EventHunter.release.xcconfig"; sourceTree = "<group>"; };
+		19D5D3020846A0CBD06B2A75 /* Pods_EventHunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventHunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61503289F9853B9658E61284 /* Pods-EventHunter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventHunter.debug.xcconfig"; path = "Target Support Files/Pods-EventHunter/Pods-EventHunter.debug.xcconfig"; sourceTree = "<group>"; };
 		85472C2E258851C100B8739F /* mNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85472C36258854D700B8739F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		85472C382588554400B8739F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		85627D232587F937009DF0C8 /* EventHunter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventHunter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85627D262587F937009DF0C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85627D2F2587F938009DF0C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85627D322587F938009DF0C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85627D342587F938009DF0C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85A24F5B2588D24500692C8E /* ListEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEventsViewModel.swift; sourceTree = "<group>"; };
+		85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardViewCell.swift; sourceTree = "<group>"; };
+		85A24F862588D7B300692C8E /* mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96385E6F118B9292F3DC0065 /* libPods-EventHunter.a in Frameworks */,
+				85A24F872588D7B300692C8E /* mCore.framework in Frameworks */,
 				85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */,
+				611A0E38BF0DB35F1A55A369 /* Pods_EventHunter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +80,9 @@
 		85472C32258851E700B8739F /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				85472C36258854D700B8739F /* EventViewController.swift */,
+				85472C3B258857FA00B8739F /* ViewModels */,
+				85A24F5D2588D5B900692C8E /* Views */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -93,6 +109,15 @@
 				85627D2F2587F938009DF0C8 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		85472C3B258857FA00B8739F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				85472C382588554400B8739F /* EventViewModel.swift */,
+				85A24F5B2588D24500692C8E /* ListEventsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		85627D1A2587F937009DF0C8 = {
@@ -125,11 +150,20 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		85A24F5D2588D5B900692C8E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		87BC913579CFC12855B9C1E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				85A24F862588D7B300692C8E /* mCore.framework */,
 				85472C2E258851C100B8739F /* mNetwork.framework */,
-				0116474FBFAA7405DAD81B23 /* libPods-EventHunter.a */,
+				19D5D3020846A0CBD06B2A75 /* Pods_EventHunter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +180,7 @@
 				85627D202587F937009DF0C8 /* Frameworks */,
 				85627D212587F937009DF0C8 /* Resources */,
 				85472C31258851C200B8739F /* Embed Frameworks */,
+				A4B0650E6E1E72DC3D99A28D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +236,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A4B0650E6E1E72DC3D99A28D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventHunter/Pods-EventHunter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EventHunter/Pods-EventHunter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EventHunter/Pods-EventHunter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E5787A857256E71D349FC0A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				85627D272587F937009DF0C8 /* AppDelegate.swift in Sources */,
+				85A24F5C2588D24500692C8E /* ListEventsViewModel.swift in Sources */,
+				85472C392588554400B8739F /* EventViewModel.swift in Sources */,
+				85A24F5F2588D5D000692C8E /* EventCardViewCell.swift in Sources */,
+				85472C37258854D700B8739F /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
