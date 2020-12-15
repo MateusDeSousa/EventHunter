@@ -11,7 +11,7 @@ import XCTest
 class APIRepositoryTests: XCTestCase {
     
     func testGetAllEvents() {
-        let expactation = XCTestExpectation(description: "get list of events")
+        let expactation = XCTestExpectation(description: "Get list of events")
         
         let api = APIRepository()
         api.getAllEvents { (result) in
@@ -28,7 +28,7 @@ class APIRepositoryTests: XCTestCase {
     }
     
     func testGetEventWithId() {
-        let expactation = XCTestExpectation(description: "get specific event")
+        let expactation = XCTestExpectation(description: "Get specific event")
         
         let api = APIRepository()
         api.getEvent(with: 1) { (result) in
@@ -38,6 +38,18 @@ class APIRepositoryTests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
+            expactation.fulfill()
+        }
+        
+        wait(for: [expactation], timeout: 4.0)
+    }
+    
+    func testCheckinEvent() {
+        let expactation = XCTestExpectation(description: "Check in at an event")
+        
+        let api = APIRepository()
+        api.checkinEvent(at: 1, name: "Mateus Sousa", email: "mateusdevsousa@gmail.com") { error in
+            if let error = error { XCTFail(error.localizedDescription) }
             expactation.fulfill()
         }
         

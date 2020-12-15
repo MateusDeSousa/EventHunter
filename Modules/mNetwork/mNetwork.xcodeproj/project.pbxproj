@@ -12,6 +12,7 @@
 		853BED2F25880241001ADD83 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BED2E25880241001ADD83 /* APIRepository.swift */; };
 		853BED33258804B8001ADD83 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BED32258804B8001ADD83 /* EventModel.swift */; };
 		853BED392588067D001ADD83 /* APIRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BED382588067D001ADD83 /* APIRepositoryTests.swift */; };
+		85472C2525884C4000B8739F /* APIRepositoryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C2425884C4000B8739F /* APIRepositoryErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		853BED2E25880241001ADD83 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
 		853BED32258804B8001ADD83 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		853BED382588067D001ADD83 /* APIRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryTests.swift; sourceTree = "<group>"; };
+		85472C2425884C4000B8739F /* APIRepositoryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				853BED2E25880241001ADD83 /* APIRepository.swift */,
+				85472C2425884C4000B8739F /* APIRepositoryErrors.swift */,
 				85286FD825880C9100F30490 /* Models */,
 			);
 			path = Sources;
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85472C2525884C4000B8739F /* APIRepositoryErrors.swift in Sources */,
 				853BED2F25880241001ADD83 /* APIRepository.swift in Sources */,
 				853BED33258804B8001ADD83 /* EventModel.swift in Sources */,
 			);
