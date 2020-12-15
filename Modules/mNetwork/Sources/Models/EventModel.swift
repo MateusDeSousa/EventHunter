@@ -8,12 +8,12 @@
 import Foundation
 
 public struct EventModel: Decodable {
-    let date: Int
-    let description: String
-    let image: String
-    let longitude: Double
-    let latitude: Double
-    let price: Double
-    let title: String
-    let id: String
+    public let date: Int
+    public let description: String
+    public let image: String
+    public let longitude: Double
+    public let latitude: Double
+    public let price: Double
+    public let title: String
+    public let id: String
 }

@@ -7,11 +7,13 @@
 
 import Foundation
 
-class APIRepository {
+public class APIRepository {
+    
+    public init() { }
     
     let baseURL = "http://5f5a8f24d44d640016169133.mockapi.io/api"
     
-    func getAllEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
+    public func getAllEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
         let endPoint = "/events"
         if let url = URL(string: baseURL + endPoint) {
             do {
@@ -26,7 +28,7 @@ class APIRepository {
         }
     }
     
-    func getEvent(with id: Int, completion: (Result<EventModel, Error>) -> Void) {
+    public func getEvent(with id: Int, completion: (Result<EventModel, Error>) -> Void) {
         let endPoint = "/events/\(id)"
         if let url = URL(string: baseURL + endPoint) {
             do {
@@ -41,7 +43,7 @@ class APIRepository {
         }
     }
     
-    func checkinEvent(at id: Int, name: String, email: String, completion: @escaping (Error?) -> Void) {
+    public func checkinEvent(at id: Int, name: String, email: String, completion: @escaping (Error?) -> Void) {
         let endPoint = "/checkin"
         
         if let url = URL(string: baseURL + endPoint) {
