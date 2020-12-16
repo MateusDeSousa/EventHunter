@@ -10,6 +10,7 @@
 		850201EE258A51CA0085F0E4 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */; };
 		850201F5258A7BA90085F0E4 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201F4258A7BA90085F0E4 /* CircleButtonView.swift */; };
 		850201FA258A7C5D0085F0E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850201F9258A7C5D0085F0E4 /* Assets.xcassets */; };
+		8591B519258A9B99008AE1B5 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8591B518258A9B99008AE1B5 /* StringExtension.swift */; };
 		85A24F742588D77800692C8E /* mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F6A2588D77800692C8E /* mCore.framework */; };
 		85A24F792588D77800692C8E /* mCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F782588D77800692C8E /* mCoreTests.swift */; };
 		85A24F7B2588D77800692C8E /* mCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A24F6D2588D77800692C8E /* mCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -37,6 +38,7 @@
 		850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		850201F4258A7BA90085F0E4 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		850201F9258A7C5D0085F0E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8591B518258A9B99008AE1B5 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		85A24F6A2588D77800692C8E /* mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A24F6D2588D77800692C8E /* mCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCore.h; sourceTree = "<group>"; };
 		85A24F6E2588D77800692C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				85A24FBC258923BB00692C8E /* IntExtension.swift */,
 				85A24FC22589262000692C8E /* DoubleExtension.swift */,
 				850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */,
+				8591B518258A9B99008AE1B5 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				85A24FBD258923BB00692C8E /* IntExtension.swift in Sources */,
 				85A24F922588DE7900692C8E /* UIColorExtension.swift in Sources */,
 				85A24FA92589045100692C8E /* CachedImageView.swift in Sources */,
+				8591B519258A9B99008AE1B5 /* StringExtension.swift in Sources */,
 				850201F5258A7BA90085F0E4 /* CircleButtonView.swift in Sources */,
 				850201EE258A51CA0085F0E4 /* UIAlertControllerExtension.swift in Sources */,
 				85A24FA82589045100692C8E /* DiscardableImageCacheItem.swift in Sources */,

@@ -5,6 +5,7 @@ use_frameworks!
 workspace 'EventHunter'
 
 pod 'Hero'
+pod 'lottie-ios'
 pod 'AFNetworking', '~> 4.0'
 
 target 'EventHunter' do
