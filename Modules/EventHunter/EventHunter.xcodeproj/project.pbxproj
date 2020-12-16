@@ -13,8 +13,10 @@
 		850201E62589543E0085F0E4 /* EventListCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E52589543E0085F0E4 /* EventListCustomView.swift */; };
 		850201E825895B950085F0E4 /* DetailsEventCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E725895B950085F0E4 /* DetailsEventCustomView.swift */; };
 		850201EA258A18990085F0E4 /* DetailsButtonsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */; };
-		850201EC258A1EF80085F0E4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201EB258A1EF80085F0E4 /* MapViewController.swift */; };
-		850201F2258A54450085F0E4 /* FormCheckinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201F1258A54450085F0E4 /* FormCheckinViewController.swift */; };
+		85020202258A899F0085F0E4 /* FormCheckinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020201258A899F0085F0E4 /* FormCheckinViewModel.swift */; };
+		85020204258A89CD0085F0E4 /* FormCheckinCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */; };
+		85020208258A8C810085F0E4 /* MapEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020207258A8C810085F0E4 /* MapEventViewModel.swift */; };
+		8502020A258A8CAE0085F0E4 /* MapEventCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */; };
 		85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; };
 		85472C30258851C100B8739F /* mNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85472C37258854D700B8739F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C36258854D700B8739F /* EventViewController.swift */; };
@@ -52,8 +54,10 @@
 		850201E52589543E0085F0E4 /* EventListCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCustomView.swift; sourceTree = "<group>"; };
 		850201E725895B950085F0E4 /* DetailsEventCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEventCustomView.swift; sourceTree = "<group>"; };
 		850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsButtonsViewCell.swift; sourceTree = "<group>"; };
-		850201EB258A1EF80085F0E4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		850201F1258A54450085F0E4 /* FormCheckinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckinViewController.swift; sourceTree = "<group>"; };
+		85020201258A899F0085F0E4 /* FormCheckinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckinViewModel.swift; sourceTree = "<group>"; };
+		85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckinCustomView.swift; sourceTree = "<group>"; };
+		85020207258A8C810085F0E4 /* MapEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventViewModel.swift; sourceTree = "<group>"; };
+		85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventCustomView.swift; sourceTree = "<group>"; };
 		85472C2E258851C100B8739F /* mNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85472C36258854D700B8739F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		85472C382588554400B8739F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
@@ -91,12 +95,31 @@
 			path = ../../Pods;
 			sourceTree = "<group>";
 		};
+		850201FF258A87A90085F0E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */,
+				850201D82589322D0085F0E4 /* DetailsEventViewCell.swift */,
+				85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		85020200258A87CE0085F0E4 /* Superviews */ = {
+			isa = PBXGroup;
+			children = (
+				850201E52589543E0085F0E4 /* EventListCustomView.swift */,
+				850201E725895B950085F0E4 /* DetailsEventCustomView.swift */,
+				85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */,
+				85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */,
+			);
+			path = Superviews;
+			sourceTree = "<group>";
+		};
 		85472C32258851E700B8739F /* Events */ = {
 			isa = PBXGroup;
 			children = (
 				85472C36258854D700B8739F /* EventViewController.swift */,
-				850201EB258A1EF80085F0E4 /* MapViewController.swift */,
-				850201F1258A54450085F0E4 /* FormCheckinViewController.swift */,
 				85472C3B258857FA00B8739F /* ViewModels */,
 				85A24F5D2588D5B900692C8E /* Views */,
 			);
@@ -133,6 +156,8 @@
 				85472C382588554400B8739F /* EventViewModel.swift */,
 				85A24F5B2588D24500692C8E /* ListEventsViewModel.swift */,
 				850201D625892B200085F0E4 /* DetailsEventViewModel.swift */,
+				85020201258A899F0085F0E4 /* FormCheckinViewModel.swift */,
+				85020207258A8C810085F0E4 /* MapEventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -170,11 +195,8 @@
 		85A24F5D2588D5B900692C8E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				850201E52589543E0085F0E4 /* EventListCustomView.swift */,
-				85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */,
-				850201E725895B950085F0E4 /* DetailsEventCustomView.swift */,
-				850201D82589322D0085F0E4 /* DetailsEventViewCell.swift */,
-				850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */,
+				85020200258A87CE0085F0E4 /* Superviews */,
+				850201FF258A87A90085F0E4 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,7 +325,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				850201EC258A1EF80085F0E4 /* MapViewController.swift in Sources */,
+				85020208258A8C810085F0E4 /* MapEventViewModel.swift in Sources */,
+				8502020A258A8CAE0085F0E4 /* MapEventCustomView.swift in Sources */,
 				85627D272587F937009DF0C8 /* AppDelegate.swift in Sources */,
 				850201E62589543E0085F0E4 /* EventListCustomView.swift in Sources */,
 				850201D92589322D0085F0E4 /* DetailsEventViewCell.swift in Sources */,
@@ -312,8 +335,9 @@
 				85A24F5F2588D5D000692C8E /* EventCardViewCell.swift in Sources */,
 				850201D725892B200085F0E4 /* DetailsEventViewModel.swift in Sources */,
 				85472C37258854D700B8739F /* EventViewController.swift in Sources */,
+				85020202258A899F0085F0E4 /* FormCheckinViewModel.swift in Sources */,
+				85020204258A89CD0085F0E4 /* FormCheckinCustomView.swift in Sources */,
 				850201E825895B950085F0E4 /* DetailsEventCustomView.swift in Sources */,
-				850201F2258A54450085F0E4 /* FormCheckinViewController.swift in Sources */,
 				850201EA258A18990085F0E4 /* DetailsButtonsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

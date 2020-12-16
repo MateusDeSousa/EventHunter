@@ -14,6 +14,7 @@ protocol EventViewModel {
     var customView: UIView { get set }
     var events: [EventModel] {get set}
     func viewDidLoad()
+    func viewDidAppear()
     func setupNavigation(_ navigation: UINavigationController?)
 }
 
@@ -21,4 +22,5 @@ extension EventViewModel {
     var events: [EventModel] {
         get { events } set { events = newValue}
     }
+    func viewDidAppear() {}
 }

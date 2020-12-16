@@ -96,12 +96,13 @@ extension DetailsEventViewModel: DetailsEventCustomViewDelegate {
 extension DetailsEventViewModel: DetailsButtonsViewCellDelegate {
     
     func showLocationPressed() {
-        let controller = MapViewController(latitude: model.latitude, longitude: model.longitude)
+        let viewModel = MapEventViewModel(latitude: model.latitude, longitude: model.longitude)
+        let controller = EventViewController(viewModel: viewModel)
         refController?.present(controller, animated: true, completion: nil)
     }
     
     func checkinPressed() {
-        let controller = FormCheckinViewController(eventId: model.id)
+        let controller = EventViewController(viewModel: FormCheckinViewModel(eventId: model.id))
         refController?.present(controller, animated: true, completion: nil)
     }
 }

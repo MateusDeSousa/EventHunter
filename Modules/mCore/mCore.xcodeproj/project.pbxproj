@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		850201EE258A51CA0085F0E4 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */; };
+		850201F5258A7BA90085F0E4 /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201F4258A7BA90085F0E4 /* CircleButtonView.swift */; };
+		850201FA258A7C5D0085F0E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 850201F9258A7C5D0085F0E4 /* Assets.xcassets */; };
 		85A24F742588D77800692C8E /* mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F6A2588D77800692C8E /* mCore.framework */; };
 		85A24F792588D77800692C8E /* mCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F782588D77800692C8E /* mCoreTests.swift */; };
 		85A24F7B2588D77800692C8E /* mCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A24F6D2588D77800692C8E /* mCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,6 +35,8 @@
 /* Begin PBXFileReference section */
 		838958D57A4CD9EF2CD0B77B /* Pods_mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		850201F4258A7BA90085F0E4 /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		850201F9258A7C5D0085F0E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85A24F6A2588D77800692C8E /* mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A24F6D2588D77800692C8E /* mCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCore.h; sourceTree = "<group>"; };
 		85A24F6E2588D77800692C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -87,10 +91,27 @@
 			path = ../../Pods;
 			sourceTree = "<group>";
 		};
+		850201F3258A7B7F0085F0E4 /* UIButtons */ = {
+			isa = PBXGroup;
+			children = (
+				850201F4258A7BA90085F0E4 /* CircleButtonView.swift */,
+			);
+			path = UIButtons;
+			sourceTree = "<group>";
+		};
+		850201F8258A7C340085F0E4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				850201F9258A7C5D0085F0E4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		85A24F602588D77800692C8E = {
 			isa = PBXGroup;
 			children = (
 				85A24F8B2588D7CF00692C8E /* Sources */,
+				850201F8258A7C340085F0E4 /* Resources */,
 				85A24F6C2588D77800692C8E /* Config */,
 				85A24F772588D77800692C8E /* mCoreTests */,
 				85A24F6B2588D77800692C8E /* Products */,
@@ -150,6 +171,7 @@
 		85A24FA42589041800692C8E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				850201F3258A7B7F0085F0E4 /* UIButtons */,
 				85A24FA52589042300692C8E /* CachedImageView */,
 			);
 			path = Components;
@@ -257,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850201FA258A7C5D0085F0E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +327,7 @@
 				85A24FBD258923BB00692C8E /* IntExtension.swift in Sources */,
 				85A24F922588DE7900692C8E /* UIColorExtension.swift in Sources */,
 				85A24FA92589045100692C8E /* CachedImageView.swift in Sources */,
+				850201F5258A7BA90085F0E4 /* CircleButtonView.swift in Sources */,
 				850201EE258A51CA0085F0E4 /* UIAlertControllerExtension.swift in Sources */,
 				85A24FA82589045100692C8E /* DiscardableImageCacheItem.swift in Sources */,
 			);

@@ -14,24 +14,15 @@ protocol DetailsEventCustomViewDelegate{
 
 class DetailsEventCustomView: UIView {
     
-    private let closeButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "iconClose"), for: .normal)
-        button.backgroundColor = .systemBlue
-        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        button.cornerRadius(of: 16)
+    private let closeButton: CircleButtonView = {
+        let button = CircleButtonView()
+        button.setup(type: .close)
         return button
     }()
     
-    private let shareButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "iconShare"), for: .normal)
-        button.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
-        button.tintColor = .white
-        button.cornerRadius(of: 16)
-        button.backgroundColor = .systemBlue
+    private let shareButton: CircleButtonView = {
+        let button = CircleButtonView()
+        button.setup(type: .share)
         return button
     }()
     
@@ -64,6 +55,8 @@ class DetailsEventCustomView: UIView {
         setupView()
         addSubviews()
         setupAnchors()
+        closeButton.setPositionTopLeft()
+        shareButton.setPositionTopRight()
     }
     
     required init?(coder: NSCoder) {
@@ -84,16 +77,6 @@ class DetailsEventCustomView: UIView {
     
     private func setupAnchors() {
         NSLayoutConstraint.activate([
-            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
-            closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
-            closeButton.heightAnchor.constraint(equalToConstant: 32),
-            closeButton.widthAnchor.constraint(equalToConstant: 32),
-            
-            shareButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
-            shareButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
-            shareButton.heightAnchor.constraint(equalToConstant: 32),
-            shareButton.widthAnchor.constraint(equalToConstant: 32),
-            
             detailsTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             detailsTableView.topAnchor.constraint(equalTo: topAnchor),
             detailsTableView.trailingAnchor.constraint(equalTo: trailingAnchor),

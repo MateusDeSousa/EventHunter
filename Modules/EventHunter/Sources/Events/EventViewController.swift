@@ -14,7 +14,6 @@ class EventViewController: UIViewController {
     init(viewModel: EventViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
-        hero.isEnabled = true
     }
     
     required init?(coder: NSCoder) {
@@ -36,6 +35,11 @@ class EventViewController: UIViewController {
         super.viewWillAppear(animated)
         viewModel.setupNavigation(navigationController)
         navigationController?.navigationBar.sizeToFit()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.viewDidAppear()
     }
     
 }

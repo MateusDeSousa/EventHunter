@@ -1,19 +1,25 @@
 //
-//  FormCheckinViewController.swift
+//  FormCheckinCustomView.swift
 //  EventHunter
 //
 //  Created by Mateus Sousa on 16/12/20.
 //
 
 import UIKit
-import mNetwork
+import mCore
 
-class FormCheckinViewController: UIViewController {
+class FormCheckinCustomView: UIView {
+    
+    private let closeButton: CircleButtonView = {
+        let button = CircleButtonView()
+        button.setup(type: .close)
+        return button
+    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Insira seus dados abaixo para continuar com check-in"
+        label.text = "Insira seus dados abaixo para continuar com o check-in"
         label.font = .boldSystemFont(ofSize: 21)
         label.textColor = .labelColor
         label.numberOfLines = 0
@@ -49,23 +55,20 @@ class FormCheckinViewController: UIViewController {
         return button
     }()
     
-    init(eventId: String) {
-        super.init(nibName: nil, bundle: nil)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupSubviews()
+        addSubviews()
+        setupAnchors()
+        closeButton.setPositionTopLeft()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupSubviews()
-        addSubviews()
-        setupAnchors()
-    }
-    
     private func setupSubviews() {
-        view.backgroundColor = .cardBackgroundColor
+        backgroundColor = .cardBackgroundColor
         doneButton.addTarget(self, action: #selector(onTapDoneButton), for: .touchUpInside)
     }
     
@@ -77,45 +80,45 @@ class FormCheckinViewController: UIViewController {
         
     }
     
-    private func runCheckin(id: Int, name: String, email: String) {
-        let api = APIRepository()
-        api.checkinEvent(at: id, name: name, email: email) { error in
-            if let error = error {
-                
-            }else {
-                
-            }
-        }
-    }
+//    private func runCheckin(id: Int, name: String, email: String) {
+//        let api = APIRepository()
+//        api.checkinEvent(at: id, name: name, email: email) { error in
+//            if let error = error {
+//
+//            }else {
+//
+//            }
+//        }
+//    }
     
     private func addSubviews() {
-        view.addSubview(titleLabel)
-        view.addSubview(nameTextField)
-        view.addSubview(emailTextField)
-        view.addSubview(doneButton)
+        addSubview(closeButton)
+        addSubview(titleLabel)
+        addSubview(nameTextField)
+        addSubview(emailTextField)
+        addSubview(doneButton)
     }
     
     private func setupAnchors() {
         NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            titleLabel.topAnchor.constraint(equalTo: closeButton.bottomAnchor, constant: 30),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             nameTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             nameTextField.heightAnchor.constraint(equalToConstant: 40),
             
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             emailTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
             
             doneButton.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 40),
-            doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            doneButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             doneButton.widthAnchor.constraint(equalToConstant: 180),
             doneButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 }
-
