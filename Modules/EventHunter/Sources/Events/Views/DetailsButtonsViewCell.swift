@@ -28,7 +28,7 @@ class DetailsButtonsViewCell: UITableViewCell {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Ver no mapa", for: .normal)
-        button.backgroundColor = .purple
+        button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.cornerRadius(of: 12)
@@ -39,7 +39,7 @@ class DetailsButtonsViewCell: UITableViewCell {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Fazer check-in", for: .normal)
-        button.backgroundColor = .purple
+        button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 16)
         button.cornerRadius(of: 12)

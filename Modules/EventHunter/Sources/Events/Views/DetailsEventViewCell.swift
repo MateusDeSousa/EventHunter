@@ -31,7 +31,8 @@ class DetailsEventViewCell: UITableViewCell {
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .labelColor
+        label.textColor = .systemBlue
+        label.font = .boldSystemFont(ofSize: 16)
         label.textAlignment = .right
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.8

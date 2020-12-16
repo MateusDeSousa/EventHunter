@@ -35,7 +35,7 @@ class EventCardViewCell: UITableViewCell {
         view.backgroundColor = .cardBackgroundColor
         view.clipsToBounds = false
         view.cornerRadius(of: 15)
-        view.hero.id = "containerInfo"
+        view.applyShadow(color: .black, opacity: 0.08, shadowOffset: CGSize(width: 0, height: -5), radius: 3)
         return view
     }()
     
@@ -44,7 +44,7 @@ class EventCardViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .labelColor
         label.numberOfLines = 0
-        label.hero.id = "eventTitle"
+        label.font = .boldSystemFont(ofSize: 16)
         return label
     }()
     
@@ -52,13 +52,18 @@ class EventCardViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
-        label.hero.id = "eventPrice"
+        label.font = .boldSystemFont(ofSize: 16)
+        label.textColor = .systemBlue
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.8
         return label
     }()
     
     private let eventDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .labelColor
+        label.font = .systemFont(ofSize: 14)
         return label
     }()
     
@@ -80,10 +85,10 @@ class EventCardViewCell: UITableViewCell {
     }
     
     public func config(urlCover: URL?, title: String?, price: Double, date: Int) {
-        eventCoverImageView.loadImage(from: urlCover)
+        eventCoverImageView.loadImage(from: urlCover, placeholderImage: UIImage(named: "emptyStateCover"), successCompletion: nil)
         eventTitleLabel.text = title
         eventPriceLabel.text = price.convertInMoney()
-        eventDateLabel.text = date.convertInDate(format: "dd/MM/yyyy")
+        eventDateLabel.text = date.convertInDate(format: "dd/MMMM/yyyy")
     }
     
     private func animateCard(zoomIn: Bool) {
@@ -120,7 +125,7 @@ class EventCardViewCell: UITableViewCell {
             eventCoverImageView.trailingAnchor.constraint(equalTo: containerCardView.trailingAnchor),
             eventCoverImageView.heightAnchor.constraint(equalToConstant: 120),
             
-            containerInfoView.topAnchor.constraint(equalTo: containerCardView.topAnchor, constant: 70),
+            containerInfoView.topAnchor.constraint(equalTo: containerCardView.topAnchor, constant: 100),
             containerInfoView.leadingAnchor.constraint(equalTo: containerCardView.leadingAnchor),
             containerInfoView.trailingAnchor.constraint(equalTo: containerCardView.trailingAnchor),
             containerInfoView.bottomAnchor.constraint(equalTo: containerCardView.bottomAnchor),
@@ -131,6 +136,7 @@ class EventCardViewCell: UITableViewCell {
             eventPriceLabel.leadingAnchor.constraint(equalTo: eventTitleLabel.trailingAnchor, constant: 15),
             eventPriceLabel.topAnchor.constraint(equalTo: eventTitleLabel.topAnchor),
             eventPriceLabel.trailingAnchor.constraint(equalTo: containerInfoView.trailingAnchor, constant: -20),
+            eventPriceLabel.widthAnchor.constraint(equalToConstant: 100),
             
             eventDateLabel.leadingAnchor.constraint(equalTo: eventTitleLabel.leadingAnchor),
             eventDateLabel.topAnchor.constraint(equalTo: eventTitleLabel.bottomAnchor, constant: 10),

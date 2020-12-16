@@ -18,7 +18,7 @@ class DetailsEventCustomView: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "iconClose"), for: .normal)
-        button.backgroundColor = .purple
+        button.backgroundColor = .systemBlue
         button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.cornerRadius(of: 16)
         return button
@@ -31,7 +31,7 @@ class DetailsEventCustomView: UIView {
         button.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
         button.tintColor = .white
         button.cornerRadius(of: 16)
-        button.backgroundColor = .purple
+        button.backgroundColor = .systemBlue
         return button
     }()
     
@@ -84,12 +84,12 @@ class DetailsEventCustomView: UIView {
     
     private func setupAnchors() {
         NSLayoutConstraint.activate([
-            closeButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
             closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             closeButton.heightAnchor.constraint(equalToConstant: 32),
             closeButton.widthAnchor.constraint(equalToConstant: 32),
             
-            shareButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            shareButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
             shareButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             shareButton.heightAnchor.constraint(equalToConstant: 32),
             shareButton.widthAnchor.constraint(equalToConstant: 32),
@@ -116,7 +116,7 @@ class DetailsEventCustomView: UIView {
     }
     
     public func setCoverImage(_ url: URL?) {
-        coverImageView.loadImage(from: url)
+        coverImageView.loadImage(from: url, placeholderImage: UIImage(named: "emptyStateCover"), successCompletion: nil)
     }
     
     @objc private func onTapCloseButton() {

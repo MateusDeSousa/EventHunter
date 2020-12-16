@@ -13,6 +13,7 @@ public extension Int {
         let date = Date(timeIntervalSince1970: TimeInterval(self))
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar.current
+        dateFormatter.locale = Locale(identifier: "pt-BR")
         dateFormatter.dateFormat = format
         return dateFormatter.string(from: date)
     }
