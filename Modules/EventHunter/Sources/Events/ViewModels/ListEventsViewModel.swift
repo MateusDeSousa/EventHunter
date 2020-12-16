@@ -9,14 +9,28 @@ import UIKit
 import mNetwork
 import mCore
 
-class ListEventsViewModel: EventViewModel {
+class ListEventsViewModel: NSObject, EventViewModel {
     
+    var customView: UIView
+    weak var refController: UIViewController?
     private let api = APIRepository()
     var events: [EventModel] = [EventModel]()
-    var reloadData: (() -> Void)?
+    
+    override init() {
+        self.customView = EventListCustomView()
+    }
     
     func viewDidLoad() {
+        setupTableView()
         fetchData()
+    }
+    
+    private func setupTableView() {
+        (customView as? EventListCustomView)?.setupTableView(delegate: self, datasource: self)
+    }
+    
+    private func reloadTableView() {
+        (customView as? EventListCustomView)?.reloadTableView()
     }
     
     private func fetchData() {
@@ -24,7 +38,7 @@ class ListEventsViewModel: EventViewModel {
             switch result {
             case .success(let events):
                 self?.events = events
-                self?.reloadData?()
+                self?.reloadTableView()
             case .failure(_):
                 break
             }
@@ -35,23 +49,26 @@ class ListEventsViewModel: EventViewModel {
         navigation?.topViewController?.title = "Eventos"
         navigation?.navigationBar.prefersLargeTitles = true
     }
+}
+
+extension ListEventsViewModel: UITableViewDelegate, UITableViewDataSource {
     
-    func setupView(_ view: UIView) {
-        view.backgroundColor = .homeBackgroundColor
-    }
-    
-    func numberOfRows() -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
     
-    func loadCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(EventCardViewCell.self)") as! EventCardViewCell
         let event = events[indexPath.row]
         cell.config(urlCover: URL(string: event.image), title: event.title, price: event.price, date: event.date)
         return cell
     }
     
-    func didSelect(at indexPath: IndexPath) {
-        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let eventSelected = events[indexPath.row]
+        let viewModel = DetailsEventViewModel(model: eventSelected)
+        let controller = EventViewController(viewModel: viewModel)
+        controller.modalPresentationStyle = .fullScreen
+        refController?.present(controller, animated: true, completion: nil)
     }
 }

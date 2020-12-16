@@ -10,20 +10,15 @@ import RxSwift
 import mNetwork
 
 protocol EventViewModel {
+    var refController: UIViewController? { get set }
+    var customView: UIView { get set }
     var events: [EventModel] {get set}
     func viewDidLoad()
-    var reloadData: (() -> Void)? { get set }
     func setupNavigation(_ navigation: UINavigationController?)
-    func setupView(_ view: UIView)
-    func numberOfRows() -> Int
-    func loadCell(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
-    func didSelect(at indexPath: IndexPath)
 }
 
 extension EventViewModel {
     var events: [EventModel] {
-        get { events }
-        set { events = newValue}
+        get { events } set { events = newValue}
     }
-    func didSelect(at indexPath: IndexPath) {}
 }

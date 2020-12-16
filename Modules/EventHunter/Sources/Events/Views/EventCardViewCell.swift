@@ -35,6 +35,7 @@ class EventCardViewCell: UITableViewCell {
         view.backgroundColor = .cardBackgroundColor
         view.clipsToBounds = false
         view.cornerRadius(of: 15)
+        view.hero.id = "containerInfo"
         return view
     }()
     
@@ -43,6 +44,7 @@ class EventCardViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .labelColor
         label.numberOfLines = 0
+        label.hero.id = "eventTitle"
         return label
     }()
     
@@ -50,6 +52,7 @@ class EventCardViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
+        label.hero.id = "eventPrice"
         return label
     }()
     

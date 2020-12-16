@@ -41,9 +41,9 @@ public extension UIColor {
     
     static var secondaryLabelColor: UIColor {
         if #available(iOS 13.0, *) {
-            return .label
+            return .secondaryLabel
         } else {
-            return .black
+            return UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6)
         }
     }
 }
