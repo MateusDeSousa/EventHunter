@@ -54,21 +54,8 @@ class MapEventViewModel: NSObject, EventViewModel {
     }
 }
 
-extension MapEventViewModel: UITextFieldDelegate {
-    
-    @objc func textFieldDidChange(_ sender: UITextField) {
-        
-    }
-}
-
 extension MapEventViewModel: MapEventCustomViewDelegate {
     func closeButtonPressed() {
-        
+        refController?.dismiss(animated: true, completion: nil)
     }
-    
-    func didChangeTextSearchBar(_ text: String) {
-        
-    }
-    
-    
 }

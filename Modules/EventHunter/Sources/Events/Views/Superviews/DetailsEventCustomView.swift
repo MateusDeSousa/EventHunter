@@ -10,6 +10,7 @@ import mCore
 
 protocol DetailsEventCustomViewDelegate{
     func closeButtonPressed()
+    func shareButtonPressed()
 }
 
 class DetailsEventCustomView: UIView {
@@ -66,6 +67,7 @@ class DetailsEventCustomView: UIView {
     private func setupView() {
         backgroundColor = .cardBackgroundColor
         closeButton.addTarget(self, action: #selector(onTapCloseButton), for: .touchUpInside)
+        shareButton.addTarget(self, action: #selector(onShareButton), for: .touchUpInside)
     }
     
     private func addSubviews() {
@@ -104,5 +106,9 @@ class DetailsEventCustomView: UIView {
     
     @objc private func onTapCloseButton() {
         delegate?.closeButtonPressed()
+    }
+    
+    @objc private func onShareButton() {
+        delegate?.shareButtonPressed()
     }
 }

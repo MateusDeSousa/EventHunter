@@ -7,7 +7,8 @@
 
 import UIKit
 import mNetwork
-import Hero
+import MapKit
+import CoreLocation
 
 class DetailsEventViewModel: NSObject, EventViewModel {
     var customView: UIView
@@ -90,6 +91,13 @@ extension DetailsEventViewModel: DetailsEventCustomViewDelegate {
     
     func closeButtonPressed() {
         refController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func shareButtonPressed() {
+        let URLString = "https://maps.apple.com?ll=\(model.latitude),\(model.longitude)"
+        let activityViewController = UIActivityViewController(activityItems: [URLString], applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = self.customView
+        refController?.present(activityViewController, animated: true, completion: nil)
     }
 }
 

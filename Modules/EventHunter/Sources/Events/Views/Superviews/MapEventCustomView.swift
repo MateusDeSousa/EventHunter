@@ -11,7 +11,6 @@ import MapKit
 
 protocol MapEventCustomViewDelegate {
     func closeButtonPressed()
-    func didChangeTextSearchBar(_ text: String)
 }
 
 class MapEventCustomView: UIView {
@@ -26,14 +25,6 @@ class MapEventCustomView: UIView {
         let mapview = MKMapView()
         mapview.translatesAutoresizingMaskIntoConstraints = false
         return mapview
-    }()
-    
-    private let searchBarTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.borderStyle = .roundedRect
-        textField.placeholder = "Ponto de partida"
-        return textField
     }()
     
     var delegate: MapEventCustomViewDelegate?
@@ -58,13 +49,11 @@ class MapEventCustomView: UIView {
     private func setupView() {
         backgroundColor = .cardBackgroundColor
         closeButton.addTarget(self, action: #selector(onTapCloseButton), for: .touchUpInside)
-        searchBarTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .valueChanged)
     }
     
     private func addSubviews() {
         addSubview(mapView)
         addSubview(closeButton)
-        addSubview(searchBarTextField)
     }
     
     private func setupAnchors() {
@@ -73,19 +62,10 @@ class MapEventCustomView: UIView {
             mapView.topAnchor.constraint(equalTo: topAnchor),
             mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            searchBarTextField.leadingAnchor.constraint(equalTo: closeButton.trailingAnchor, constant: 20),
-            searchBarTextField.centerYAnchor.constraint(equalTo: closeButton.centerYAnchor),
-            searchBarTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            searchBarTextField.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
     @objc private func onTapCloseButton() {
         delegate?.closeButtonPressed()
-    }
-    
-    @objc private func textFieldDidChange(_ sender: UITextField) {
-        delegate?.didChangeTextSearchBar(sender.text!)
     }
 }

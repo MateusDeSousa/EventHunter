@@ -107,11 +107,16 @@ class FormCheckinCustomView: UIView, UITextFieldDelegate {
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailTextField.delegate = self
         doneButton.addTarget(self, action: #selector(onTapDoneButton), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(onTapCloseButton), for: .touchUpInside)
     }
     
     @objc private func onTapDoneButton() {
         endEditing(true)
         delegate?.doneButtonPressed()
+    }
+    
+    @objc private func onTapCloseButton() {
+        delegate?.closeButtonPressed()
     }
     
     private func addSubviews() {
