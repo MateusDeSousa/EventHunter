@@ -9,22 +9,6 @@ import UIKit
 import AFNetworking
 
 public class CachedImageView: UIImageView {
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator: UIActivityIndicatorView
-        if #available(iOS 13, *) {
-            activityIndicator = UIActivityIndicatorView(style: .medium)
-        } else {
-            activityIndicator = UIActivityIndicatorView(style: .gray)
-        }
-        
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
-        activityIndicator.frame = CGRect(
-            x: 0, y: 0, width: bounds.width, height: bounds.height)
-        activityIndicator.tintColor = .homeBackgroundColor
-        
-        return activityIndicator
-    }()
     
     public static let imageCache = NSCache<NSString, DiscardableImageCacheItem>()
     public var shouldUseEmptyImage = true
@@ -44,14 +28,13 @@ public class CachedImageView: UIImageView {
     public func loadImage(from url: URL?, placeholderImage: UIImage? = nil, successCompletion: ((UIImage?) -> Void)? = nil) {
         image = nil
         emptyImage = placeholderImage
+        image = emptyImage
         
         guard let url = url else {
-            image = emptyImage
             successCompletion?(image)
             return
         }
         
-//        self.activityIndicator.embed(in: self)
         let urlRequest = URLRequest(url: url,
                                     cachePolicy: .returnCacheDataElseLoad,
                                     timeoutInterval: 60)
@@ -62,16 +45,13 @@ public class CachedImageView: UIImageView {
         setImageWith(urlRequest, placeholderImage: nil, success: {
             [weak self] (_, httpResponse, image) in
             
-            self?.activityIndicator.removeFromSuperview()
-            
-            // Não existe imagem no cache
+            // not found cache image
             if httpResponse != nil {
                 self?.alpha = 0.0
                 self?.image = image
                 UIView.animate(withDuration: 0.3, animations: {
                     self?.alpha = 1.0
                 })
-                // Existe imagem no cache, não executa a transição
             } else {
                 self?.image = image
             }

@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "iconClose"), for: .normal)
-        button.backgroundColor = .purple
+        button.backgroundColor = .systemBlue
         button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.cornerRadius(of: 16)
         return button

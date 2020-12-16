@@ -48,6 +48,24 @@ class ListEventsViewModel: NSObject, EventViewModel {
     func setupNavigation(_ navigation: UINavigationController?) {
         navigation?.topViewController?.title = "Eventos"
         navigation?.navigationBar.prefersLargeTitles = true
+        
+        let filterButton = UIBarButtonItem(image: UIImage(named: "iconSorting"), style: .done, target: self, action: #selector(onTapFilterButton))
+        navigation?.topViewController?.navigationItem.rightBarButtonItem = filterButton
+        navigation?.navigationBar.tintColor = .labelColor
+    }
+    
+    @objc private func onTapFilterButton() {
+        let sortActionSheet = UIAlertController(title: "Ordenar por:", message: nil, preferredStyle: .actionSheet)
+        sortActionSheet.addAction(UIAlertAction(title: "Data", style: .default, handler: {[weak self] _ in
+            self?.events.sort(by: {$0.date > $1.date})
+            self?.reloadTableView()
+        }))
+        sortActionSheet.addAction(UIAlertAction(title: "Preço", style: .default, handler: {[weak self] _ in
+            self?.events.sort(by: {$0.price < $1.price})
+            self?.reloadTableView()
+        }))
+        sortActionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        refController?.present(sortActionSheet, animated: true, completion: nil)
     }
 }
 
