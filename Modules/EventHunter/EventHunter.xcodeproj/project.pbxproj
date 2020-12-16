@@ -13,6 +13,7 @@
 		850201E62589543E0085F0E4 /* EventListCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E52589543E0085F0E4 /* EventListCustomView.swift */; };
 		850201E825895B950085F0E4 /* DetailsEventCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E725895B950085F0E4 /* DetailsEventCustomView.swift */; };
 		850201EA258A18990085F0E4 /* DetailsButtonsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */; };
+		850201EC258A1EF80085F0E4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201EB258A1EF80085F0E4 /* MapViewController.swift */; };
 		85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; };
 		85472C30258851C100B8739F /* mNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85472C37258854D700B8739F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C36258854D700B8739F /* EventViewController.swift */; };
@@ -50,6 +51,7 @@
 		850201E52589543E0085F0E4 /* EventListCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCustomView.swift; sourceTree = "<group>"; };
 		850201E725895B950085F0E4 /* DetailsEventCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEventCustomView.swift; sourceTree = "<group>"; };
 		850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsButtonsViewCell.swift; sourceTree = "<group>"; };
+		850201EB258A1EF80085F0E4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		85472C2E258851C100B8739F /* mNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85472C36258854D700B8739F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		85472C382588554400B8739F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				85472C36258854D700B8739F /* EventViewController.swift */,
+				850201EB258A1EF80085F0E4 /* MapViewController.swift */,
 				85472C3B258857FA00B8739F /* ViewModels */,
 				85A24F5D2588D5B900692C8E /* Views */,
 			);
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850201EC258A1EF80085F0E4 /* MapViewController.swift in Sources */,
 				85627D272587F937009DF0C8 /* AppDelegate.swift in Sources */,
 				850201E62589543E0085F0E4 /* EventListCustomView.swift in Sources */,
 				850201D92589322D0085F0E4 /* DetailsEventViewCell.swift in Sources */,
