@@ -101,6 +101,7 @@ extension DetailsEventViewModel: DetailsButtonsViewCellDelegate {
     }
     
     func checkinPressed() {
-        
+        let controller = FormCheckinViewController(eventId: model.id)
+        refController?.present(controller, animated: true, completion: nil)
     }
 }
