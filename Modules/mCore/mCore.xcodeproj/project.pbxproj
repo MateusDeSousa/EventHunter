@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		850201EE258A51CA0085F0E4 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */; };
 		85A24F742588D77800692C8E /* mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F6A2588D77800692C8E /* mCore.framework */; };
 		85A24F792588D77800692C8E /* mCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A24F782588D77800692C8E /* mCoreTests.swift */; };
 		85A24F7B2588D77800692C8E /* mCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 85A24F6D2588D77800692C8E /* mCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		838958D57A4CD9EF2CD0B77B /* Pods_mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		85A24F6A2588D77800692C8E /* mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A24F6D2588D77800692C8E /* mCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mCore.h; sourceTree = "<group>"; };
 		85A24F6E2588D77800692C8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				85A24F912588DE7900692C8E /* UIColorExtension.swift */,
 				85A24FBC258923BB00692C8E /* IntExtension.swift */,
 				85A24FC22589262000692C8E /* DoubleExtension.swift */,
+				850201ED258A51CA0085F0E4 /* UIAlertControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				85A24FBD258923BB00692C8E /* IntExtension.swift in Sources */,
 				85A24F922588DE7900692C8E /* UIColorExtension.swift in Sources */,
 				85A24FA92589045100692C8E /* CachedImageView.swift in Sources */,
+				850201EE258A51CA0085F0E4 /* UIAlertControllerExtension.swift in Sources */,
 				85A24FA82589045100692C8E /* DiscardableImageCacheItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
