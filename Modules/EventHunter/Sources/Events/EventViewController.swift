@@ -32,8 +32,10 @@ class EventViewController: UIViewController {
         viewModel.viewDidLoad()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.setupNavigation(navigationController)
+        navigationController?.navigationBar.sizeToFit()
     }
+    
 }
