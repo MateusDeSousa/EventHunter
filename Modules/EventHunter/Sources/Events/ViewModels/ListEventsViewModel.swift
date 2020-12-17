@@ -67,7 +67,6 @@ class ListEventsViewModel: NSObject, EventViewModel {
             self?.reloadTableView()
         }))
         sortActionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-        sortActionSheet.configPopoverAlert(refController?.navigationController?.navigationBar, sourceRect: nil)
         refController?.present(sortActionSheet, animated: true, completion: nil)
     }
 }
