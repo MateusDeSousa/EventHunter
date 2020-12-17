@@ -24,7 +24,8 @@ class APIRepositoryTests: XCTestCase {
             expactation.fulfill()
         }
         
-        wait(for: [expactation], timeout: 4.0)
+        //60 is the default timeout for a URLRequest
+        wait(for: [expactation], timeout: 60.0)
     }
     
     func testGetEventWithId() {
@@ -41,7 +42,8 @@ class APIRepositoryTests: XCTestCase {
             expactation.fulfill()
         }
         
-        wait(for: [expactation], timeout: 4.0)
+        //60 is the default timeout for a URLRequest
+        wait(for: [expactation], timeout: 60.0)
     }
     
     func testCheckinEvent() {
@@ -53,6 +55,7 @@ class APIRepositoryTests: XCTestCase {
             expactation.fulfill()
         }
         
-        wait(for: [expactation], timeout: 4.0)
+        //60 is the default timeout for a URLRequest
+        wait(for: [expactation], timeout: 60.0)
     }
 }
