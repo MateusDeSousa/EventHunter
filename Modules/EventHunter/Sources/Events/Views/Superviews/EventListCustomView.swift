@@ -19,6 +19,25 @@ class EventListCustomView: UIView {
         return tableView
     }()
     
+    private lazy var emptyStateImage: UIImageView = {
+        let imageview = UIImageView()
+        imageview.translatesAutoresizingMaskIntoConstraints = false
+        imageview.image = UIImage(named: "noFoundNetwork")
+        imageview.contentMode = .scaleAspectFill
+        return imageview
+    }()
+    
+    private lazy var emptyStateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Ops! Não foi possível buscar eventos. Verifique sua conexão com a internet e tente novamente."
+        label.font = .boldSystemFont(ofSize: 16)
+        label.textColor = .labelColor
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -43,7 +62,7 @@ class EventListCustomView: UIView {
             eventTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             eventTableView.topAnchor.constraint(equalTo: topAnchor),
             eventTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            eventTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            eventTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
@@ -52,8 +71,29 @@ class EventListCustomView: UIView {
         eventTableView.dataSource = datasource
     }
     
+    private func buildEmptyState() {
+        addSubview(emptyStateImage)
+        addSubview(emptyStateLabel)
+        
+        NSLayoutConstraint.activate([
+            emptyStateImage.centerXAnchor.constraint(equalTo: centerXAnchor),
+            emptyStateImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -60),
+            emptyStateImage.heightAnchor.constraint(equalToConstant: 200),
+            emptyStateImage.widthAnchor.constraint(equalToConstant: 200),
+            
+            emptyStateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            emptyStateLabel.topAnchor.constraint(equalTo: emptyStateImage.bottomAnchor, constant: 50),
+            emptyStateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)
+        ])
+    }
+    
     public func reloadTableView() {
         eventTableView.reloadData()
         eventTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+    }
+    
+    public func notFoundData() {
+        eventTableView.isHidden = true
+        buildEmptyState()
     }
 }

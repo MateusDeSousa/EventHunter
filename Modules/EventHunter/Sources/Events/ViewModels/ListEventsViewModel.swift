@@ -40,7 +40,7 @@ class ListEventsViewModel: NSObject, EventViewModel {
                 self?.events = events
                 self?.reloadTableView()
             case .failure(_):
-                break
+                (self?.customView as? EventListCustomView)?.notFoundData()
             }
         }
     }
