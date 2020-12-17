@@ -17,6 +17,7 @@
 		85020208258A8C810085F0E4 /* MapEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020207258A8C810085F0E4 /* MapEventViewModel.swift */; };
 		8502020A258A8CAE0085F0E4 /* MapEventCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */; };
 		852A6086258B882600730EB2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852A6088258B882600730EB2 /* Localizable.strings */; };
+		852A6096258BC55C00730EB2 /* EventHunterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852A6095258BC55C00730EB2 /* EventHunterUITests.swift */; };
 		85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; };
 		85472C30258851C100B8739F /* mNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85472C37258854D700B8739F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C36258854D700B8739F /* EventViewController.swift */; };
@@ -30,6 +31,16 @@
 		85A24F872588D7B300692C8E /* mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F862588D7B300692C8E /* mCore.framework */; };
 		85A24F882588D7B300692C8E /* mCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F862588D7B300692C8E /* mCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		852A6098258BC55C00730EB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85627D1B2587F937009DF0C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85627D222587F937009DF0C8;
+			remoteInfo = EventHunter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		85472C31258851C200B8739F /* Embed Frameworks */ = {
@@ -59,6 +70,9 @@
 		85020207258A8C810085F0E4 /* MapEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventViewModel.swift; sourceTree = "<group>"; };
 		85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventCustomView.swift; sourceTree = "<group>"; };
 		852A6087258B882600730EB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		852A6093258BC55C00730EB2 /* EventHunterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventHunterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		852A6095258BC55C00730EB2 /* EventHunterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHunterUITests.swift; sourceTree = "<group>"; };
+		852A6097258BC55C00730EB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85472C2E258851C100B8739F /* mNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85472C36258854D700B8739F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		85472C382588554400B8739F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
@@ -74,6 +88,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		852A6090258BC55C00730EB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85627D202587F937009DF0C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,6 +146,15 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		852A6094258BC55C00730EB2 /* EventHunterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				852A6095258BC55C00730EB2 /* EventHunterUITests.swift */,
+				852A6097258BC55C00730EB2 /* Info.plist */,
+			);
+			path = EventHunterUITests;
+			sourceTree = "<group>";
+		};
 		85472C32258851E700B8739F /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +202,7 @@
 				85627D252587F937009DF0C8 /* Sources */,
 				85472C352588523500B8739F /* Resources */,
 				85472C342588522600B8739F /* Config */,
+				852A6094258BC55C00730EB2 /* EventHunterUITests */,
 				85627D242587F937009DF0C8 /* Products */,
 				55745C1DAA9B9B7B48A86488 /* Pods */,
 				87BC913579CFC12855B9C1E7 /* Frameworks */,
@@ -182,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				85627D232587F937009DF0C8 /* EventHunter.app */,
+				852A6093258BC55C00730EB2 /* EventHunterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,6 +257,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		852A6092258BC55C00730EB2 /* EventHunterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 852A609A258BC55C00730EB2 /* Build configuration list for PBXNativeTarget "EventHunterUITests" */;
+			buildPhases = (
+				852A608F258BC55C00730EB2 /* Sources */,
+				852A6090258BC55C00730EB2 /* Frameworks */,
+				852A6091258BC55C00730EB2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				852A6099258BC55C00730EB2 /* PBXTargetDependency */,
+			);
+			name = EventHunterUITests;
+			productName = EventHunterUITests;
+			productReference = 852A6093258BC55C00730EB2 /* EventHunterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		85627D222587F937009DF0C8 /* EventHunter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85627D372587F938009DF0C8 /* Build configuration list for PBXNativeTarget "EventHunter" */;
@@ -254,6 +304,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					852A6092258BC55C00730EB2 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 85627D222587F937009DF0C8;
+					};
 					85627D222587F937009DF0C8 = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -273,11 +327,19 @@
 			projectRoot = "";
 			targets = (
 				85627D222587F937009DF0C8 /* EventHunter */,
+				852A6092258BC55C00730EB2 /* EventHunterUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		852A6091258BC55C00730EB2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85627D212587F937009DF0C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,6 +396,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		852A608F258BC55C00730EB2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				852A6096258BC55C00730EB2 /* EventHunterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		85627D1F2587F937009DF0C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -356,6 +426,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		852A6099258BC55C00730EB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85627D222587F937009DF0C8 /* EventHunter */;
+			targetProxy = 852A6098258BC55C00730EB2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		852A6088258B882600730EB2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -376,6 +454,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		852A609B258BC55C00730EB2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3T7W6T7535;
+				INFOPLIST_FILE = EventHunterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mateussousa.EventHunterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EventHunter;
+			};
+			name = Debug;
+		};
+		852A609C258BC55C00730EB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3T7W6T7535;
+				INFOPLIST_FILE = EventHunterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mateussousa.EventHunterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EventHunter;
+			};
+			name = Release;
+		};
 		85627D352587F938009DF0C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,6 +655,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		852A609A258BC55C00730EB2 /* Build configuration list for PBXNativeTarget "EventHunterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				852A609B258BC55C00730EB2 /* Debug */,
+				852A609C258BC55C00730EB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		85627D1E2587F937009DF0C8 /* Build configuration list for PBXProject "EventHunter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
