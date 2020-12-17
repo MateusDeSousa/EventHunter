@@ -2,9 +2,9 @@ name: Workflow CI
 
 on:
   push:
-    branches: [ master, improvement/ci ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
