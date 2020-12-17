@@ -32,11 +32,27 @@
 
 </br>
 
-## 🔧 Requisitos:
+## 💻 Requisitos:
 
 - Xcode 12
 - Cocoapods
-- iOS 12+
+- iOS 9+
+
+</br>
+
+## ✏️ Estrutura do código
+
+- Modularizado em frameworks
+- Cocoapods como gerenciador de dependências de terceiros.
+- Arquitetura MVVM
+- Frameworks nativos: UIKit, MapKit
+
+</br>
+
+ ## 🔧 Frameworks
+
+- Lottie: Utilizado para animações de chick-in concluído.
+- AFNetworking: Utilizado para fazer cache de downloads de imagens.
 
 </br>
 
@@ -67,6 +83,8 @@ $ open EventHunter.xcworkspace/
  - [ ] Endpoint de check-in registra ação mas não altera json de resposta do evento.
 
  </br>
+
+
 
  ## 📄 License
 
