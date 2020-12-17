@@ -12,7 +12,6 @@
 		850201D92589322D0085F0E4 /* DetailsEventViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201D82589322D0085F0E4 /* DetailsEventViewCell.swift */; };
 		850201E62589543E0085F0E4 /* EventListCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E52589543E0085F0E4 /* EventListCustomView.swift */; };
 		850201E825895B950085F0E4 /* DetailsEventCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E725895B950085F0E4 /* DetailsEventCustomView.swift */; };
-		850201EA258A18990085F0E4 /* DetailsButtonsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */; };
 		85020202258A899F0085F0E4 /* FormCheckinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020201258A899F0085F0E4 /* FormCheckinViewModel.swift */; };
 		85020204258A89CD0085F0E4 /* FormCheckinCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */; };
 		85020208258A8C810085F0E4 /* MapEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020207258A8C810085F0E4 /* MapEventViewModel.swift */; };
@@ -55,7 +54,6 @@
 		850201D82589322D0085F0E4 /* DetailsEventViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEventViewCell.swift; sourceTree = "<group>"; };
 		850201E52589543E0085F0E4 /* EventListCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListCustomView.swift; sourceTree = "<group>"; };
 		850201E725895B950085F0E4 /* DetailsEventCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEventCustomView.swift; sourceTree = "<group>"; };
-		850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsButtonsViewCell.swift; sourceTree = "<group>"; };
 		85020201258A899F0085F0E4 /* FormCheckinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckinViewModel.swift; sourceTree = "<group>"; };
 		85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckinCustomView.swift; sourceTree = "<group>"; };
 		85020207258A8C810085F0E4 /* MapEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventViewModel.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		850201FF258A87A90085F0E4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				850201E9258A18990085F0E4 /* DetailsButtonsViewCell.swift */,
 				850201D82589322D0085F0E4 /* DetailsEventViewCell.swift */,
 				85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */,
 			);
@@ -354,7 +351,6 @@
 				85020202258A899F0085F0E4 /* FormCheckinViewModel.swift in Sources */,
 				85020204258A89CD0085F0E4 /* FormCheckinCustomView.swift in Sources */,
 				850201E825895B950085F0E4 /* DetailsEventCustomView.swift in Sources */,
-				850201EA258A18990085F0E4 /* DetailsButtonsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

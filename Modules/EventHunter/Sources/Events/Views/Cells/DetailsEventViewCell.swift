@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol DetailsEventViewCellDelegate {
+    func showLocationPressed()
+    func checkinPressed()
+}
+
 class DetailsEventViewCell: UITableViewCell {
     
     private let bodyStackView: UIStackView = {
@@ -55,6 +60,40 @@ class DetailsEventViewCell: UITableViewCell {
         return label
     }()
     
+    private let buttonsFooterStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.spacing = 25
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
+    
+    private let showLocationButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Ver no mapa", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        button.cornerRadius(of: 12)
+        return button
+    }()
+    
+    private let checkinButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Fazer check-in", for: .normal)
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 16)
+        button.cornerRadius(of: 12)
+        return button
+    }()
+    
+    var delegate: DetailsEventViewCellDelegate?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
@@ -77,18 +116,25 @@ class DetailsEventViewCell: UITableViewCell {
         selectionStyle = .none
         contentView.backgroundColor = .cardBackgroundColor
         backgroundColor = .clear
+        showLocationButton.addTarget(self, action: #selector(onTapShowLocationButton), for: .touchUpInside)
+        checkinButton.addTarget(self, action: #selector(onTapCheckinButton), for: .touchUpInside)
     }
     
     private func addSubviews() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(bodyStackView)
+        contentView.addSubview(buttonsFooterStackView)
         
         bodyStackView.addArrangedSubview(descriptionLabel)
         bodyStackView.addArrangedSubview(dateLabel)
+        
+        buttonsFooterStackView.addArrangedSubview(showLocationButton)
+        buttonsFooterStackView.addArrangedSubview(checkinButton)
     }
     
     private func setupAnchors() {
+        let stackWidthWidth = UIScreen.main.bounds.width > 414 ? (414 * 0.866) : (UIScreen.main.bounds.width * 0.866)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35),
@@ -101,8 +147,25 @@ class DetailsEventViewCell: UITableViewCell {
             bodyStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 25),
             bodyStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 25),
             bodyStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -25),
-            bodyStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
+            
+            buttonsFooterStackView.widthAnchor.constraint(equalToConstant: stackWidthWidth),
+            buttonsFooterStackView.heightAnchor.constraint(equalToConstant: 45),
+            buttonsFooterStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            buttonsFooterStackView.topAnchor.constraint(equalTo: bodyStackView.bottomAnchor, constant: 40),
+            buttonsFooterStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
         ])
+    }
+    
+    @objc private func onTapShowLocationButton() {
+        delegate?.showLocationPressed()
+    }
+    
+    @objc private func onTapCheckinButton() {
+        delegate?.checkinPressed()
+    }
+    
+    public func hiddenButttons(_ hidden: Bool) {
+        buttonsFooterStackView.isHidden = hidden
     }
 }
 

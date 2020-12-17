@@ -9,7 +9,7 @@ import UIKit
 
 class EventListCustomView: UIView {
     
-    private let eventTableView: UITableView = {
+    public let eventTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none

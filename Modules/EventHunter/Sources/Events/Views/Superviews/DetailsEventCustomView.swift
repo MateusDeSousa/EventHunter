@@ -27,7 +27,7 @@ class DetailsEventCustomView: UIView {
         return button
     }()
     
-    private let coverImageView: CachedImageView = {
+    public let coverImageView: CachedImageView = {
         let imageView = CachedImageView(frame: .zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -35,7 +35,7 @@ class DetailsEventCustomView: UIView {
         return imageView
     }()
     
-    private let detailsTableView: UITableView = {
+    public let detailsTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = .none
@@ -89,6 +89,10 @@ class DetailsEventCustomView: UIView {
             coverImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             detailsTableViewHeightAnchor
         ])
+    }
+    
+    public func restoreConstraints() {
+        setupAnchors()
     }
     
     public func setupTableView(delegate: UITableViewDelegate, datasource: UITableViewDataSource) {

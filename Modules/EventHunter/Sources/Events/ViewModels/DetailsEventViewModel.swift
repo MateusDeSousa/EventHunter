@@ -64,22 +64,14 @@ extension DetailsEventViewModel: UITableViewDelegate, UITableViewDataSource, UIS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = DetailsEventViewCell()
-            cell.config(title: model.title, price: model.price, description: model.description, date: model.date)
-            return cell
-        case 1:
-            let cell = DetailsButtonsViewCell()
-            cell.delegate = self
-            return cell
-        default:
-            return UITableViewCell()
-        }
+        let cell = DetailsEventViewCell()
+        cell.config(title: model.title, price: model.price, description: model.description, date: model.date)
+        cell.delegate = self
+        return cell
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -94,14 +86,50 @@ extension DetailsEventViewModel: DetailsEventCustomViewDelegate {
     }
     
     func shareButtonPressed() {
-        let URLString = "https://maps.apple.com?ll=\(model.latitude),\(model.longitude)"
-        let activityViewController = UIActivityViewController(activityItems: [URLString], applicationActivities: nil)
-                activityViewController.popoverPresentationController?.sourceView = self.customView
+        guard let image = screenshot() else { return }
+        let activityViewController = UIActivityViewController(activityItems: [model.title, image], applicationActivities: nil)
         refController?.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    func screenshot() -> UIImage? {
+        guard let superview = customView as? DetailsEventCustomView else { return  nil }
+        let tableView = superview.detailsTableView
+        let imageCover = superview.coverImageView
+        
+        var contentSize = tableView.contentSize
+        contentSize.height += 80
+        UIGraphicsBeginImageContextWithOptions(contentSize, false, UIScreen.main.scale)
+        
+        // save initial values
+        let savedContentOffset = tableView.contentOffset
+        
+        tableView.contentOffset = CGPoint(x: 0, y: 0)
+        tableView.frame = CGRect(x: 0, y: 170, width: tableView.contentSize.width, height: tableView.contentSize.height)
+        superview.detailsTableView.backgroundColor = UIColor.clear
+        
+        let tempView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.contentSize.width, height: contentSize.height))
+        
+        tempView.addSubview(imageCover)
+        tempView.addSubview(tableView)
+        
+        tempView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        // and return everything back
+        superview.insertSubview(imageCover, at: 0)
+        superview.insertSubview(tableView, at: 1)
+        
+        // restore saved settings
+        tableView.contentOffset = savedContentOffset
+        superview.restoreConstraints()
+        
+        UIGraphicsEndImageContext();
+        return image
     }
 }
 
-extension DetailsEventViewModel: DetailsButtonsViewCellDelegate {
+extension DetailsEventViewModel: DetailsEventViewCellDelegate {
     
     func showLocationPressed() {
         let viewModel = MapEventViewModel(latitude: model.latitude, longitude: model.longitude)
