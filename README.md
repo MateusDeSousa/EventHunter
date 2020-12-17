@@ -28,11 +28,8 @@
 </br>
 
 ## 📸 Screenshots
-<img src="ReadmeAssets/print1.png" width="200" />
-<img src="ReadmeAssets/print2.png" width="200" />
-<img src="ReadmeAssets/print3.png" width="200" />
-<img src="ReadmeAssets/print4.png" width="200" />
-<img src="ReadmeAssets/print5.png" width="200" />
+<img src="ReadmeAssets/print1.png" width= 200px /><img src="ReadmeAssets/print2.png" width= 200px /><img src="ReadmeAssets/print3.png" width= 200px /><img src="ReadmeAssets/print4.png" width= 200px /><img src="ReadmeAssets/print5.png" width= 200px />
+
 </br>
 
 ## 🔧 Requisitos:
