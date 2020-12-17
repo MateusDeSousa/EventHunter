@@ -4,18 +4,23 @@ use_frameworks!
 
 workspace 'EventHunter'
 
-pod 'Hero'
 pod 'lottie-ios'
 pod 'AFNetworking', '~> 4.0'
 
 target 'EventHunter' do
     project 'Modules/EventHunter/EventHunter.project'
-    pod 'RxSwift', '6.0.0-rc.2'
-    pod 'RxCocoa', '6.0.0-rc.2'
 end
 
 target 'mCore' do
   project 'Modules/mCore/mCore.project'
+end
+
+target 'mNetwork' do
+  project 'Modules/mNetwork/mNetwork.project'
+  target 'mNetworkTests' do
+    project 'Modules/mNetwork/mNetwork.project'
+    :inherited_paths
+  end
 end
 
 post_install do |pi|
