@@ -15,6 +15,7 @@ protocol MapEventCustomViewDelegate {
 
 class MapEventCustomView: UIView {
     
+    //MARK: UI Components
     private let closeButton: CircleButtonView = {
         let button = CircleButtonView()
         button.setup(type: .close)
@@ -46,6 +47,7 @@ class MapEventCustomView: UIView {
         endEditing(true)
     }
     
+    //MARK: Functions to build components in the view
     private func setupView() {
         backgroundColor = .cardBackgroundColor
         closeButton.addTarget(self, action: #selector(onTapCloseButton), for: .touchUpInside)

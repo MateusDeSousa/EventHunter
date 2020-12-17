@@ -14,6 +14,7 @@ protocol DetailsEventViewCellDelegate {
 
 class DetailsEventViewCell: UITableViewCell {
     
+    //MARK: UI Components
     private let bodyStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,13 +106,7 @@ class DetailsEventViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func config(title: String?, price: Double, description: String?, date: Int) {
-        titleLabel.text = title
-        priceLabel.text = price.convertInMoney()
-        descriptionLabel.text = description
-        dateLabel.text = "Data do evento: " + date.convertInDate(format: "dd/MM/yyyy")
-    }
-    
+    //MARK: Functions to build components in the view
     private func setupSubviews() {
         selectionStyle = .none
         contentView.backgroundColor = .cardBackgroundColor
@@ -156,6 +151,15 @@ class DetailsEventViewCell: UITableViewCell {
         ])
     }
     
+    public func config(title: String?, price: Double, description: String?, date: Int) {
+        titleLabel.text = title
+        priceLabel.text = price.convertInMoney()
+        descriptionLabel.text = description
+        dateLabel.text = "Data do evento: " + date.convertInDate(format: "dd/MM/yyyy")
+    }
+}
+
+extension DetailsEventViewCell {
     @objc private func onTapShowLocationButton() {
         delegate?.showLocationPressed()
     }
@@ -168,4 +172,3 @@ class DetailsEventViewCell: UITableViewCell {
         buttonsFooterStackView.isHidden = hidden
     }
 }
-

@@ -10,6 +10,7 @@ import mCore
 
 class EventCardViewCell: UITableViewCell {
     
+    //MARK: UI Components
     private let containerCardView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -84,19 +85,7 @@ class EventCardViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func config(urlCover: URL?, title: String?, price: Double, date: Int) {
-        eventCoverImageView.loadImage(from: urlCover, placeholderImage: UIImage(named: "emptyStateCover"), successCompletion: nil)
-        eventTitleLabel.text = title
-        eventPriceLabel.text = price.convertInMoney()
-        eventDateLabel.text = date.convertInDate(format: "dd/MMMM/yyyy")
-    }
-    
-    private func animateCard(zoomIn: Bool) {
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction], animations: {
-            self.containerCardView.transform = zoomIn ? CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9) : .identity
-        }, completion: nil)
-    }
-    
+    //MARK: Functions to build components in the view
     private func setupCell() {
         selectionStyle = .none
         backgroundColor = .clear
@@ -143,5 +132,21 @@ class EventCardViewCell: UITableViewCell {
             eventDateLabel.trailingAnchor.constraint(equalTo: containerInfoView.trailingAnchor, constant: -20),
             eventDateLabel.bottomAnchor.constraint(equalTo: containerInfoView.bottomAnchor, constant: -20)
         ])
+    }
+    
+    public func config(urlCover: URL?, title: String?, price: Double, date: Int) {
+        eventCoverImageView.loadImage(from: urlCover, placeholderImage: UIImage(named: "emptyStateCover"), successCompletion: nil)
+        eventTitleLabel.text = title
+        eventPriceLabel.text = price.convertInMoney()
+        eventDateLabel.text = date.convertInDate(format: "dd/MMMM/yyyy")
+    }
+}
+
+extension EventCardViewCell {
+    
+    private func animateCard(zoomIn: Bool) {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: [.allowUserInteraction], animations: {
+            self.containerCardView.transform = zoomIn ? CGAffineTransform.identity.scaledBy(x: 0.9, y: 0.9) : .identity
+        }, completion: nil)
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class EventListCustomView: UIView {
     
+    //MARK: UI Components
     public let eventTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,6 +50,7 @@ class EventListCustomView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Functions to build components in the view
     private func setupView() {
         backgroundColor = .homeBackgroundColor
     }
@@ -66,9 +68,24 @@ class EventListCustomView: UIView {
         ])
     }
     
+    //MARK: Setup component tableView
     public func setupTableView(delegate: UITableViewDelegate, datasource: UITableViewDataSource) {
         eventTableView.delegate = delegate
         eventTableView.dataSource = datasource
+    }
+    
+    public func reloadTableView() {
+        eventTableView.reloadData()
+        eventTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+    }
+}
+
+
+extension EventListCustomView {
+    
+    public func notFoundData() {
+        eventTableView.isHidden = true
+        buildEmptyState()
     }
     
     private func buildEmptyState() {
@@ -85,15 +102,5 @@ class EventListCustomView: UIView {
             emptyStateLabel.topAnchor.constraint(equalTo: emptyStateImage.bottomAnchor, constant: 50),
             emptyStateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)
         ])
-    }
-    
-    public func reloadTableView() {
-        eventTableView.reloadData()
-        eventTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-    }
-    
-    public func notFoundData() {
-        eventTableView.isHidden = true
-        buildEmptyState()
     }
 }

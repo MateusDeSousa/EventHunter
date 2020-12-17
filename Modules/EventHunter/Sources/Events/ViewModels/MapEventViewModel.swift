@@ -22,6 +22,7 @@ class MapEventViewModel: NSObject, EventViewModel {
         self.customView = MapEventCustomView()
     }
     
+    //MARK: Lifecycle view
     func viewDidLoad() {
         setViewDelegate()
         centerToLocation(initialLocation)
@@ -31,9 +32,7 @@ class MapEventViewModel: NSObject, EventViewModel {
         setPointLocation(initialCoordinate)
     }
     
-    func setupNavigation(_ navigation: UINavigationController?) {
-        
-    }
+    func setupNavigation(_ navigation: UINavigationController?) { }
     
     private func setViewDelegate() {
         (customView as? MapEventCustomView)?.delegate = self

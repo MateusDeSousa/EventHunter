@@ -22,13 +22,12 @@ class FormCheckinViewModel: EventViewModel {
         self.customView = FormCheckinCustomView()
     }
     
+    //MARK: Lifecycle view
     func viewDidLoad() {
         setViewDelegate()
     }
     
-    func setupNavigation(_ navigation: UINavigationController?) {
-        
-    }
+    func setupNavigation(_ navigation: UINavigationController?) { }
     
     private func setViewDelegate() {
         (customView as? FormCheckinCustomView)?.delegate = self

@@ -23,6 +23,7 @@ class DetailsEventViewModel: NSObject, EventViewModel {
         self.customView = DetailsEventCustomView()
     }
     
+    //MARK: Lifecycle view
     func viewDidLoad() {
         loadCoverImage()
         setupView()

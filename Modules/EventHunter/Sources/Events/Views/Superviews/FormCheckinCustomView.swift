@@ -18,6 +18,7 @@ protocol FormCheckinCustomViewDelegate {
 
 class FormCheckinCustomView: UIView, UITextFieldDelegate {
     
+    //MARK: UI Components
     private let closeButton: CircleButtonView = {
         let button = CircleButtonView()
         button.setup(type: .close)
@@ -100,6 +101,7 @@ class FormCheckinCustomView: UIView, UITextFieldDelegate {
         endEditing(true)
     }
     
+    //MARK: Functions to build components in the view
     private func setupSubviews() {
         backgroundColor = .cardBackgroundColor
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -108,15 +110,6 @@ class FormCheckinCustomView: UIView, UITextFieldDelegate {
         emailTextField.delegate = self
         doneButton.addTarget(self, action: #selector(onTapDoneButton), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(onTapCloseButton), for: .touchUpInside)
-    }
-    
-    @objc private func onTapDoneButton() {
-        endEditing(true)
-        delegate?.doneButtonPressed()
-    }
-    
-    @objc private func onTapCloseButton() {
-        delegate?.closeButtonPressed()
     }
     
     private func addSubviews() {
@@ -148,6 +141,15 @@ class FormCheckinCustomView: UIView, UITextFieldDelegate {
             doneButton.widthAnchor.constraint(equalToConstant: 180),
             doneButton.heightAnchor.constraint(equalToConstant: 45)
         ])
+    }
+    
+    @objc private func onTapDoneButton() {
+        endEditing(true)
+        delegate?.doneButtonPressed()
+    }
+    
+    @objc private func onTapCloseButton() {
+        delegate?.closeButtonPressed()
     }
     
     @objc public func textFieldDidChange(_ sender: UITextField) {

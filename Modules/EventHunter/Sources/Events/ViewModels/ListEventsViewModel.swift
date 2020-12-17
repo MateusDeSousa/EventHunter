@@ -20,6 +20,7 @@ class ListEventsViewModel: NSObject, EventViewModel {
         self.customView = EventListCustomView()
     }
     
+    //MARK: Lifecycle view
     func viewDidLoad() {
         setupTableView()
         fetchData()
