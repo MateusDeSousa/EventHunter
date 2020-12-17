@@ -32,7 +32,7 @@
 
 </br>
 
-## 💻 Requisitos:
+## 💻 Requisitos
 
 - Xcode 12
 - Cocoapods
@@ -56,7 +56,7 @@
 
 </br>
 
-## 🚀 Executar projeto:
+## 🚀 Como executar o projeto
 
 1. Escolha um diretório, navegue até ele pelo terminal e digite os seguintes comandos:
 ```sh
@@ -68,7 +68,7 @@ $ open EventHunter.xcworkspace/
 
 </br>
 
-## 🕹 Features:
+## 🕹 Features
  
  - [x] Listagem de eventos
  - [x] Detalhes do evento
