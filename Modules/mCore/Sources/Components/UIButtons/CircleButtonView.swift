@@ -31,14 +31,14 @@ public class CircleButtonView: UIButton {
         guard let superview = self.superview else { return }
         translatesAutoresizingMaskIntoConstraints = false
         leadingAnchor.constraint(equalTo: superview.leadingAnchor, constant: 25).isActive = true
-        topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        topAnchor.constraint(equalTo: superview.layoutMarginsGuide.topAnchor, constant: 15).isActive = true
     }
     
     public func setPositionTopRight() {
         guard let superview = self.superview else { return }
         translatesAutoresizingMaskIntoConstraints = false
         trailingAnchor.constraint(equalTo: superview.trailingAnchor, constant: -25).isActive = true
-        topAnchor.constraint(equalTo: superview.safeAreaLayoutGuide.topAnchor, constant: 15).isActive = true
+        topAnchor.constraint(equalTo: superview.layoutMarginsGuide.topAnchor, constant: 15).isActive = true
     }
 }
 

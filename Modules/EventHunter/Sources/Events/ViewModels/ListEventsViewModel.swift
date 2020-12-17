@@ -47,7 +47,9 @@ class ListEventsViewModel: NSObject, EventViewModel {
     
     func setupNavigation(_ navigation: UINavigationController?) {
         navigation?.topViewController?.title = "Eventos"
-        navigation?.navigationBar.prefersLargeTitles = true
+        if #available(iOS 11.0, *) {
+            navigation?.navigationBar.prefersLargeTitles = true
+        }
         
         let filterButton = UIBarButtonItem(image: UIImage(named: "iconSorting"), style: .done, target: self, action: #selector(onTapFilterButton(_:)))
         navigation?.topViewController?.navigationItem.rightBarButtonItem = filterButton
