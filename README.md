@@ -40,7 +40,7 @@
 
 </br>
 
-## ✏️ Estrutura do código
+## ✏️ Estrutura do projeto
 
 - Modularizado em frameworks
 - Cocoapods como gerenciador de dependências de terceiros.
@@ -49,7 +49,7 @@
 
 </br>
 
- ## 🔧 Frameworks
+ ## 🔧 Dependências de terceiros
 
 - Lottie: Utilizado para animações de chick-in concluído.
 - AFNetworking: Utilizado para fazer cache de downloads de imagens.
