@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  EventHunter
+
+  Created by Mateus Sousa on 17/12/20.
+  
+*/
+
+"events" = "Eventos";
+"order-by" = "Ordenar por:";
+"date" = "Data";
+"price" = "Preço";
+"cancel" = "Cancelar";
+
+"error" = "Erro";
+"error-checkin-message" = "Error ao fazer check-in, verifique sua conexão e tente novamente!";
+"empty-field" = "Campo vazio";
+"empty-field-message" = "Preencha corretamente o seu nome para prosseguir";
+"email-incorrect" = "Email incorreto";
+"email-incorrect-message" = "Preencha corretamente o seu email para continuar";
+"ok" = "Entendi";
+
+"empty-state-message" = "Ops! Não foi possível buscar eventos. Verifique sua conexão com a internet e tente novamente.";

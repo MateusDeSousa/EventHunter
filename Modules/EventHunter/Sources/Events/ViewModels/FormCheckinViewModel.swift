@@ -39,7 +39,7 @@ class FormCheckinViewModel: EventViewModel {
         api.checkinEvent(at: id, name: name, email: email) {[weak self] error in
             DispatchQueue.main.async {
                 if let _ = error {
-                    self?.showDialogError(titleError: "Erro", messageError: "Error ao fazer check-in, verifique sua conexão e tente novamente!")
+                    self?.showDialogError(titleError: NSLocalizedString("error", comment: ""), messageError: NSLocalizedString("error-checkin-message", comment: ""))
                 }else {
                     (self?.customView as? FormCheckinCustomView)?.startCompleteCheckin()
                 }
@@ -50,10 +50,10 @@ class FormCheckinViewModel: EventViewModel {
     
     private func toValidFields() -> Bool {
         if nameUser.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            showDialogError(titleError: "Campo vazio", messageError: "Preencha corretamente o seu nome para prosseguir")
+            showDialogError(titleError: NSLocalizedString("empty-field", comment: ""), messageError: NSLocalizedString("empty-field-message", comment: ""))
             return false
         }else if !emailUser.isValidEmail() {
-            showDialogError(titleError: "Email incorreto", messageError: "Preencha corretamente o seu email para continuar")
+            showDialogError(titleError: NSLocalizedString("email-incorrect", comment: ""), messageError: NSLocalizedString("email-incorrect-message", comment: ""))
             return false
         }else {
             return true
@@ -62,7 +62,7 @@ class FormCheckinViewModel: EventViewModel {
     
     private func showDialogError(titleError: String, messageError: String) {
         let alertController = UIAlertController(title: titleError, message: messageError, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Entendi", style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("email-incorrect-message", comment: ""), style: .default, handler: nil))
         refController?.present(alertController, animated: true, completion: nil)
     }
 }

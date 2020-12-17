@@ -46,7 +46,7 @@ class ListEventsViewModel: NSObject, EventViewModel {
     }
     
     func setupNavigation(_ navigation: UINavigationController?) {
-        navigation?.topViewController?.title = "Eventos"
+        navigation?.topViewController?.title = NSLocalizedString("events", comment: "")
         if #available(iOS 11.0, *) {
             navigation?.navigationBar.prefersLargeTitles = true
         }
@@ -57,16 +57,16 @@ class ListEventsViewModel: NSObject, EventViewModel {
     }
     
     @objc private func onTapFilterButton(_ sender: UIBarButtonItem) {
-        let sortActionSheet = UIAlertController(title: "Ordenar por:", message: nil, preferredStyle: .actionSheet)
-        sortActionSheet.addAction(UIAlertAction(title: "Data", style: .default, handler: {[weak self] _ in
+        let sortActionSheet = UIAlertController(title: NSLocalizedString("order-by", comment: ""), message: nil, preferredStyle: .actionSheet)
+        sortActionSheet.addAction(UIAlertAction(title: NSLocalizedString("date", comment: ""), style: .default, handler: {[weak self] _ in
             self?.events.sort(by: {$0.date > $1.date})
             self?.reloadTableView()
         }))
-        sortActionSheet.addAction(UIAlertAction(title: "Preço", style: .default, handler: {[weak self] _ in
+        sortActionSheet.addAction(UIAlertAction(title: NSLocalizedString("price", comment: ""), style: .default, handler: {[weak self] _ in
             self?.events.sort(by: {$0.price < $1.price})
             self?.reloadTableView()
         }))
-        sortActionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+        sortActionSheet.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil))
         refController?.present(sortActionSheet, animated: true, completion: nil)
     }
 }

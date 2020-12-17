@@ -30,7 +30,7 @@ class EventListCustomView: UIView {
     private lazy var emptyStateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Ops! Não foi possível buscar eventos. Verifique sua conexão com a internet e tente novamente."
+        label.text = NSLocalizedString("empty-state-message", comment: "")
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .labelColor
         label.textAlignment = .center

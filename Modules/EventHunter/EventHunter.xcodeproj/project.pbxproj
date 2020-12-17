@@ -17,6 +17,7 @@
 		85020204258A89CD0085F0E4 /* FormCheckinCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */; };
 		85020208258A8C810085F0E4 /* MapEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020207258A8C810085F0E4 /* MapEventViewModel.swift */; };
 		8502020A258A8CAE0085F0E4 /* MapEventCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */; };
+		852A6086258B882600730EB2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852A6088258B882600730EB2 /* Localizable.strings */; };
 		85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; };
 		85472C30258851C100B8739F /* mNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85472C2E258851C100B8739F /* mNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85472C37258854D700B8739F /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C36258854D700B8739F /* EventViewController.swift */; };
@@ -59,6 +60,7 @@
 		85020203258A89CD0085F0E4 /* FormCheckinCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCheckinCustomView.swift; sourceTree = "<group>"; };
 		85020207258A8C810085F0E4 /* MapEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventViewModel.swift; sourceTree = "<group>"; };
 		85020209258A8CAE0085F0E4 /* MapEventCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEventCustomView.swift; sourceTree = "<group>"; };
+		852A6087258B882600730EB2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		85472C2E258851C100B8739F /* mNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85472C36258854D700B8739F /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		85472C382588554400B8739F /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			path = Superviews;
 			sourceTree = "<group>";
 		};
+		852A6083258B880600730EB2 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				852A6088258B882600730EB2 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		85472C32258851E700B8739F /* Events */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		85472C352588523500B8739F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				852A6083258B880600730EB2 /* Localizable */,
 				8591B526258AA5D4008AE1B5 /* Animations */,
 				85627D312587F938009DF0C8 /* LaunchScreen.storyboard */,
 				85627D2F2587F938009DF0C8 /* Assets.xcassets */,
@@ -275,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85627D332587F938009DF0C8 /* LaunchScreen.storyboard in Resources */,
+				852A6086258B882600730EB2 /* Localizable.strings in Resources */,
 				8591B528258AA605008AE1B5 /* checking.json in Resources */,
 				85627D302587F938009DF0C8 /* Assets.xcassets in Resources */,
 			);
@@ -349,6 +361,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		852A6088258B882600730EB2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				852A6087258B882600730EB2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		85627D312587F938009DF0C8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
