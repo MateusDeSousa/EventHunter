@@ -39,7 +39,7 @@ class DetailsEventViewModel: NSObject, EventViewModel {
     }
     
     private func loadCoverImage() {
-        (customView as? DetailsEventCustomView)?.setCoverImage(URL(string: model.image))
+        (customView as? DetailsEventCustomView)?.setCoverImage(model.image)
     }
     
     private func updateHeightCoverImage(_ contentOffset: CGFloat) {

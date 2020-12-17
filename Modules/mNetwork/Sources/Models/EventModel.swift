@@ -10,7 +10,7 @@ import Foundation
 public struct EventModel: Decodable {
     public let date: Int
     public let description: String
-    public let image: String
+    public let image: URL
     public let longitude: Double
     public let latitude: Double
     public let price: Double

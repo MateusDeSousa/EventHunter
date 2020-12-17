@@ -36,6 +36,7 @@ class APIRepositoryTests: XCTestCase {
             switch result {
             case .success(let event):
                 XCTAssert(event.date == 1534784400)
+                break
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }

@@ -80,7 +80,7 @@ extension ListEventsViewModel: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "\(EventCardViewCell.self)") as! EventCardViewCell
         let event = events[indexPath.row]
-        cell.config(urlCover: URL(string: event.image), title: event.title, price: event.price, date: event.date)
+        cell.config(urlCover: event.image, title: event.title, price: event.price, date: event.date)
         return cell
     }
     
