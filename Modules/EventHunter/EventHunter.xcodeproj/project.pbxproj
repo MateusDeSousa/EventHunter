@@ -128,13 +128,6 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
-		85472C33258851FB00B8739F /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		85472C342588522600B8739F /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +183,6 @@
 			children = (
 				85627D262587F937009DF0C8 /* AppDelegate.swift */,
 				85472C32258851E700B8739F /* Events */,
-				85472C33258851FB00B8739F /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
