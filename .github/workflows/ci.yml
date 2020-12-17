@@ -1,0 +1,24 @@
+name: Workflow CI
+
+on:
+  push:
+    branches: [ master, improvement/ci ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/cache@master
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+
+    - name: install pods
+      run: pod install
+    - name: build project
+      run: xcodebuild build -workspace EventHunter.xcworkspace -scheme EventHunter -destination "platform=iOS Simulator,OS=14.2,name=iPhone 12 pro"
