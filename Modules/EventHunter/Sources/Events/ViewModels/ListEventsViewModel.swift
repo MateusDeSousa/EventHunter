@@ -37,9 +37,14 @@ class ListEventsViewModel: NSObject, EventViewModel {
     private func fetchData() {
         api.getAllEvents {[weak self] (result) in
             switch result {
-            case .success(let events):
-                self?.events = events
-                self?.reloadTableView()
+            case .success(let data):
+                do {
+                    let listEvents = try JSONDecoder().decode([EventModel].self, from: data)
+                    self?.events = listEvents
+                    self?.reloadTableView()
+                } catch {
+                    #warning("Realizar tratamento de error")
+                }
             case .failure(_):
                 (self?.customView as? EventListCustomView)?.notFoundData()
             }

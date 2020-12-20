@@ -12,7 +12,6 @@
 		853BED19258801F0001ADD83 /* mNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 853BED0F258801F0001ADD83 /* mNetwork.framework */; };
 		853BED20258801F0001ADD83 /* mNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 853BED12258801F0001ADD83 /* mNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		853BED2F25880241001ADD83 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BED2E25880241001ADD83 /* APIRepository.swift */; };
-		853BED33258804B8001ADD83 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BED32258804B8001ADD83 /* EventModel.swift */; };
 		853BED392588067D001ADD83 /* APIRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853BED382588067D001ADD83 /* APIRepositoryTests.swift */; };
 		85472C2525884C4000B8739F /* APIRepositoryErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85472C2425884C4000B8739F /* APIRepositoryErrors.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		853BED18258801F0001ADD83 /* mNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		853BED1F258801F0001ADD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		853BED2E25880241001ADD83 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
-		853BED32258804B8001ADD83 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		853BED382588067D001ADD83 /* APIRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryTests.swift; sourceTree = "<group>"; };
 		85472C2425884C4000B8739F /* APIRepositoryErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepositoryErrors.swift; sourceTree = "<group>"; };
 		869F87AA59EB77E4CD15844C /* Pods_mNetwork_mNetworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mNetwork_mNetworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,14 +85,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		85286FD825880C9100F30490 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				853BED32258804B8001ADD83 /* EventModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		853BED05258801F0001ADD83 = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +129,6 @@
 			children = (
 				853BED2E25880241001ADD83 /* APIRepository.swift */,
 				85472C2425884C4000B8739F /* APIRepositoryErrors.swift */,
-				85286FD825880C9100F30490 /* Models */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -322,7 +311,6 @@
 			files = (
 				85472C2525884C4000B8739F /* APIRepositoryErrors.swift in Sources */,
 				853BED2F25880241001ADD83 /* APIRepository.swift in Sources */,
-				853BED33258804B8001ADD83 /* EventModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

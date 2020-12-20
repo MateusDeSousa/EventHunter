@@ -13,13 +13,12 @@ public class APIRepository {
     
     let baseURL = "http://5f5a8f24d44d640016169133.mockapi.io/api"
     
-    public func getAllEvents(completion: @escaping (Result<[EventModel], Error>) -> Void) {
+    public func getAllEvents(completion: @escaping (Result<Data, Error>) -> Void) {
         let endPoint = "/events"
         if let url = URL(string: baseURL + endPoint) {
             do {
                 let data = try Data(contentsOf: url)
-                let listEvents = try JSONDecoder().decode([EventModel].self, from: data)
-                completion(.success(listEvents))
+                completion(.success(data))
             } catch {
                 completion(.failure(error))
             }
@@ -28,13 +27,12 @@ public class APIRepository {
         }
     }
     
-    public func getEvent(with id: Int, completion: (Result<EventModel, Error>) -> Void) {
+    public func getEvent(with id: Int, completion: (Result<Data, Error>) -> Void) {
         let endPoint = "/events/\(id)"
         if let url = URL(string: baseURL + endPoint) {
             do {
                 let data = try Data(contentsOf: url)
-                let listEvents = try JSONDecoder().decode(EventModel.self, from: data)
-                completion(.success(listEvents))
+                completion(.success(data))
             } catch {
                 completion(.failure(error))
             }
