@@ -22,7 +22,7 @@ extension APIRepositoryErrors: LocalizedError {
         case .noResponseServer:
             return "No response from the server"
         case .failureCheckin:
-            return "Error checking in"
+            return "Error in API"
         case .encodePostData:
             return "Error when turning dictionary to Data"
         }

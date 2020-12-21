@@ -16,8 +16,8 @@ class APIRepositoryTests: XCTestCase {
         let api = APIRepository()
         api.getAllEvents { (result) in
             switch result {
-            case .success(let events):
-                XCTAssert(events.count > 0)
+            case .success(let data):
+                XCTAssertFalse(data.isEmpty, "Error in API")
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
@@ -34,9 +34,8 @@ class APIRepositoryTests: XCTestCase {
         let api = APIRepository()
         api.getEvent(with: 1) { (result) in
             switch result {
-            case .success(let event):
-                XCTAssert(event.date == 1534784400)
-                break
+            case .success(let data):
+                XCTAssertFalse(data.isEmpty, "Error in API")
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
