@@ -9,15 +9,17 @@ import UIKit
 import mNetwork
 import mCore
 
-class ListEventsViewModel: NSObject, EventViewModel {
+class ListEventsViewModel: NSObject, EventViewModel, CustomViewManager {
     
-    var customView: UIView
+    typealias CustomView = EventListCustomView
+    
+    var view: UIView
     weak var refController: UIViewController?
     private let api = APIRepository()
     var events: [EventModel] = [EventModel]()
     
     override init() {
-        self.customView = EventListCustomView()
+        self.view = EventListCustomView()
     }
     
     //MARK: Lifecycle view
@@ -27,11 +29,11 @@ class ListEventsViewModel: NSObject, EventViewModel {
     }
     
     private func setupTableView() {
-        (customView as? EventListCustomView)?.setupTableView(delegate: self, datasource: self)
+        customView.setupTableView(delegate: self, datasource: self)
     }
     
     private func reloadTableView() {
-        (customView as? EventListCustomView)?.reloadTableView()
+        customView.reloadTableView()
     }
     
     private func fetchData() {
@@ -41,12 +43,12 @@ class ListEventsViewModel: NSObject, EventViewModel {
                 do {
                     let listEvents = try JSONDecoder().decode([EventModel].self, from: data)
                     self?.events = listEvents
-                    self?.reloadTableView()
                 } catch {
                     #warning("Realizar tratamento de error")
                 }
+                self?.reloadTableView()
             case .failure(_):
-                (self?.customView as? EventListCustomView)?.notFoundData()
+                self?.customView.buildViewError(.notFoundData)
             }
         }
     }

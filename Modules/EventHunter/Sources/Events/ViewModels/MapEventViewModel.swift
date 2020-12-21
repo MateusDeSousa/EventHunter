@@ -8,10 +8,12 @@
 import UIKit
 import MapKit
 
-class MapEventViewModel: NSObject, EventViewModel {
+class MapEventViewModel: NSObject, EventViewModel, CustomViewManager {
+    
+    typealias CustomView = MapEventCustomView
     
     var refController: UIViewController?
-    var customView: UIView
+    var view: UIView
     
     private let initialCoordinate: CLLocationCoordinate2D
     private let initialLocation: CLLocation
@@ -19,7 +21,7 @@ class MapEventViewModel: NSObject, EventViewModel {
     init(latitude: Double, longitude: Double) {
         self.initialLocation = CLLocation(latitude: latitude, longitude: longitude)
         self.initialCoordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        self.customView = MapEventCustomView()
+        self.view = MapEventCustomView()
     }
     
     //MARK: Lifecycle view
@@ -35,7 +37,7 @@ class MapEventViewModel: NSObject, EventViewModel {
     func setupNavigation(_ navigation: UINavigationController?) { }
     
     private func setViewDelegate() {
-        (customView as? MapEventCustomView)?.delegate = self
+        customView.delegate = self
     }
     
     func centerToLocation( _ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
@@ -43,13 +45,13 @@ class MapEventViewModel: NSObject, EventViewModel {
             center: location.coordinate,
             latitudinalMeters: regionRadius,
             longitudinalMeters: regionRadius)
-        (customView as? MapEventCustomView)?.mapView.setRegion(coordinateRegion, animated: true)
+        customView.mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func setPointLocation(_ coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        (customView as? MapEventCustomView)?.mapView.addAnnotation(annotation)
+        customView.mapView.addAnnotation(annotation)
     }
 }
 

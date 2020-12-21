@@ -8,10 +8,12 @@
 import UIKit
 import mNetwork
 
-class FormCheckinViewModel: EventViewModel {
+class FormCheckinViewModel: EventViewModel, CustomViewManager {
+    
+    typealias CustomView = FormCheckinCustomView
     
     var refController: UIViewController?
-    var customView: UIView
+    var view: UIView
     
     private let eventId: String
     private var nameUser: String = ""
@@ -19,7 +21,7 @@ class FormCheckinViewModel: EventViewModel {
     
     init(eventId: String) {
         self.eventId = eventId
-        self.customView = FormCheckinCustomView()
+        self.view = FormCheckinCustomView()
     }
     
     //MARK: Lifecycle view
@@ -30,7 +32,7 @@ class FormCheckinViewModel: EventViewModel {
     func setupNavigation(_ navigation: UINavigationController?) { }
     
     private func setViewDelegate() {
-        (customView as? FormCheckinCustomView)?.delegate = self
+        customView.delegate = self
     }
     
     private func runCheckin(id: Int, name: String, email: String) {
@@ -40,7 +42,7 @@ class FormCheckinViewModel: EventViewModel {
                 if let _ = error {
                     self?.showDialogError(titleError: NSLocalizedString("error", comment: ""), messageError: NSLocalizedString("error-checkin-message", comment: ""))
                 }else {
-                    (self?.customView as? FormCheckinCustomView)?.startCompleteCheckin()
+                    self?.customView.startCompleteCheckin()
                 }
             }
             

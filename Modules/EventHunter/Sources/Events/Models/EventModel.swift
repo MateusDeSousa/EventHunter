@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct EventModel: Decodable {
-    public let date: Int
-    public let description: String
-    public let image: URL
-    public let longitude: Double
-    public let latitude: Double
-    public let price: Double
-    public let title: String
-    public let id: String
+struct EventModel: Decodable {
+    let date: Int
+    let description: String
+    let image: URL
+    let longitude: Double
+    let latitude: Double
+    let price: Double
+    let title: String
+    let id: String
 }

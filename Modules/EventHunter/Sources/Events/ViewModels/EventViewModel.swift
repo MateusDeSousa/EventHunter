@@ -9,17 +9,21 @@ import UIKit
 import mNetwork
 
 protocol EventViewModel {
+    var view: UIView { get set }
     var refController: UIViewController? { get set }
-    var customView: UIView { get set }
-    var events: [EventModel] {get set}
+    
     func viewDidLoad()
     func viewDidAppear()
     func setupNavigation(_ navigation: UINavigationController?)
 }
 
+//MARK: - Optional implementation of life cycle methods
 extension EventViewModel {
-    var events: [EventModel] {
-        get { events } set { events = newValue}
-    }
+    func viewDidLoad() {}
     func viewDidAppear() {}
+}
+
+//MARK: - Optional implementation of additional methods
+extension EventViewModel {
+    func setupNavigation(_ navigation: UINavigationController?) {}
 }

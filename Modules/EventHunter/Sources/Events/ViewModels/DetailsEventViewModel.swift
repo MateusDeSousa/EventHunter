@@ -10,8 +10,10 @@ import mNetwork
 import MapKit
 import CoreLocation
 
-class DetailsEventViewModel: NSObject, EventViewModel {
-    var customView: UIView
+class DetailsEventViewModel: NSObject, EventViewModel, CustomViewManager {
+    typealias CustomView = DetailsEventCustomView
+    
+    var view: UIView
     
     weak var refController: UIViewController?
     
@@ -20,7 +22,7 @@ class DetailsEventViewModel: NSObject, EventViewModel {
     
     init(model: EventModel) {
         self.model = model
-        self.customView = DetailsEventCustomView()
+        self.view = DetailsEventCustomView()
     }
     
     //MARK: Lifecycle view
@@ -30,22 +32,21 @@ class DetailsEventViewModel: NSObject, EventViewModel {
     }
     
     private func setupView() {
-        let view = customView as? DetailsEventCustomView
-        view?.setupTableView(delegate: self, datasource: self)
-        view?.delegate = self
+        customView.setupTableView(delegate: self, datasource: self)
+        customView.delegate = self
     }
     
     private func reloadTableView() {
-        (customView as? DetailsEventCustomView)?.reloadTableView()
+        customView.reloadTableView()
     }
     
     private func loadCoverImage() {
-        (customView as? DetailsEventCustomView)?.setCoverImage(model.image)
+        customView.setCoverImage(model.image)
     }
     
     private func updateHeightCoverImage(_ contentOffset: CGFloat) {
         let constant: CGFloat = -contentOffset > 190 ? -contentOffset + 30 : 220
-        (customView as? DetailsEventCustomView)?.detailsTableViewHeightAnchor.constant = constant
+        customView.detailsTableViewHeightAnchor.constant = constant
     }
     
     func setupNavigation(_ navigation: UINavigationController?) {
@@ -93,9 +94,8 @@ extension DetailsEventViewModel: DetailsEventCustomViewDelegate {
     }
     
     func screenshot() -> UIImage? {
-        guard let superview = customView as? DetailsEventCustomView else { return  nil }
-        let tableView = superview.detailsTableView
-        let imageCover = superview.coverImageView
+        let tableView = customView.detailsTableView
+        let imageCover = customView.coverImageView
         
         var contentSize = tableView.contentSize
         contentSize.height += 80
@@ -106,7 +106,7 @@ extension DetailsEventViewModel: DetailsEventCustomViewDelegate {
         
         tableView.contentOffset = CGPoint(x: 0, y: 0)
         tableView.frame = CGRect(x: 0, y: 170, width: tableView.contentSize.width, height: tableView.contentSize.height)
-        superview.detailsTableView.backgroundColor = UIColor.clear
+        customView.detailsTableView.backgroundColor = UIColor.clear
         
         let tempView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.contentSize.width, height: contentSize.height))
         
@@ -118,12 +118,12 @@ extension DetailsEventViewModel: DetailsEventCustomViewDelegate {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         
         // and return everything back
-        superview.insertSubview(imageCover, at: 0)
-        superview.insertSubview(tableView, at: 1)
+        customView.insertSubview(imageCover, at: 0)
+        customView.insertSubview(tableView, at: 1)
         
         // restore saved settings
         tableView.contentOffset = savedContentOffset
-        superview.restoreConstraints()
+        customView.restoreConstraints()
         
         UIGraphicsEndImageContext();
         return image

@@ -22,7 +22,7 @@ class EventViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = viewModel.customView
+        view = viewModel.view
     }
     
     override func viewDidLoad() {

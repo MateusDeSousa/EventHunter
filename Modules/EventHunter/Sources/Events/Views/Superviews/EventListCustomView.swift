@@ -23,7 +23,6 @@ class EventListCustomView: UIView {
     private lazy var emptyStateImage: UIImageView = {
         let imageview = UIImageView()
         imageview.translatesAutoresizingMaskIntoConstraints = false
-        imageview.image = UIImage(named: "noFoundNetwork")
         imageview.contentMode = .scaleAspectFill
         return imageview
     }()
@@ -31,7 +30,6 @@ class EventListCustomView: UIView {
     private lazy var emptyStateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = NSLocalizedString("empty-state-message", comment: "")
         label.font = .boldSystemFont(ofSize: 16)
         label.textColor = .labelColor
         label.textAlignment = .center
@@ -83,15 +81,21 @@ class EventListCustomView: UIView {
 
 extension EventListCustomView {
     
-    public func notFoundData() {
+    public func buildViewError(_ error: ErrorType) {
         eventTableView.isHidden = true
-        buildEmptyState()
+        emptyStateImage.image = error.getImage()
+        emptyStateLabel.text = error.getMessage()
+        
+        addSubviewsError()
+        setupAnchorsError()
     }
     
-    private func buildEmptyState() {
+    private func addSubviewsError() {
         addSubview(emptyStateImage)
         addSubview(emptyStateLabel)
-        
+    }
+    
+    private func setupAnchorsError() {
         NSLayoutConstraint.activate([
             emptyStateImage.centerXAnchor.constraint(equalTo: centerXAnchor),
             emptyStateImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -60),
@@ -102,5 +106,31 @@ extension EventListCustomView {
             emptyStateLabel.topAnchor.constraint(equalTo: emptyStateImage.bottomAnchor, constant: 50),
             emptyStateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50)
         ])
+    }
+}
+
+extension EventListCustomView {
+    
+    enum ErrorType {
+        case notFoundData
+        case errorJson
+        
+        func getImage() -> UIImage? {
+            switch self {
+            case .notFoundData:
+                return UIImage(named: "noFoundNetwork")
+            case .errorJson:
+                return UIImage(named: "noFoundNetwork")
+            }
+        }
+        
+        func getMessage() -> String {
+            switch self {
+            case .notFoundData:
+                return NSLocalizedString("empty-state-message", comment: "")
+            case .errorJson:
+                return NSLocalizedString("empty-state-message", comment: "")
+            }
+        }
     }
 }
