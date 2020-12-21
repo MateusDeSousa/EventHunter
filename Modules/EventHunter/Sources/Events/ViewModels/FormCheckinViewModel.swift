@@ -63,7 +63,7 @@ class FormCheckinViewModel: EventViewModel, CustomViewManager {
     
     private func showDialogError(titleError: String, messageError: String) {
         let alertController = UIAlertController(title: titleError, message: messageError, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("email-incorrect-message", comment: ""), style: .default, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .default, handler: nil))
         refController?.present(alertController, animated: true, completion: nil)
     }
 }
