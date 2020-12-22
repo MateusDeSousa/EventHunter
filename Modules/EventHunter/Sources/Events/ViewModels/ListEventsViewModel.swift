@@ -44,7 +44,7 @@ class ListEventsViewModel: NSObject, EventViewModel, CustomViewManager {
                     let listEvents = try JSONDecoder().decode([EventModel].self, from: data)
                     self?.events = listEvents
                 } catch {
-                    #warning("Realizar tratamento de error")
+                    self?.customView.buildViewError(.notFoundData)
                 }
                 self?.reloadTableView()
             case .failure(_):

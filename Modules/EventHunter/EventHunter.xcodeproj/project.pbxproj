@@ -32,10 +32,18 @@
 		85A24F872588D7B300692C8E /* mCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F862588D7B300692C8E /* mCore.framework */; };
 		85A24F882588D7B300692C8E /* mCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 85A24F862588D7B300692C8E /* mCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		85C27B6A259121E40013C23D /* CustomViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C27B69259121E40013C23D /* CustomViewManager.swift */; };
+		85C27B77259127630013C23D /* EventHunterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C27B76259127630013C23D /* EventHunterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		852A6098258BC55C00730EB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 85627D1B2587F937009DF0C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 85627D222587F937009DF0C8;
+			remoteInfo = EventHunter;
+		};
+		85C27B79259127630013C23D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 85627D1B2587F937009DF0C8 /* Project object */;
 			proxyType = 1;
@@ -89,6 +97,9 @@
 		85A24F5E2588D5D000692C8E /* EventCardViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardViewCell.swift; sourceTree = "<group>"; };
 		85A24F862588D7B300692C8E /* mCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C27B69259121E40013C23D /* CustomViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewManager.swift; sourceTree = "<group>"; };
+		85C27B74259127630013C23D /* EventHunterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EventHunterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C27B76259127630013C23D /* EventHunterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHunterTests.swift; sourceTree = "<group>"; };
+		85C27B78259127630013C23D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +117,13 @@
 				85A24F872588D7B300692C8E /* mCore.framework in Frameworks */,
 				85472C2F258851C100B8739F /* mNetwork.framework in Frameworks */,
 				611A0E38BF0DB35F1A55A369 /* Pods_EventHunter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C27B71259127630013C23D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +226,7 @@
 				85472C352588523500B8739F /* Resources */,
 				85472C342588522600B8739F /* Config */,
 				852A6094258BC55C00730EB2 /* EventHunterUITests */,
+				85C27B75259127630013C23D /* EventHunterTests */,
 				85627D242587F937009DF0C8 /* Products */,
 				55745C1DAA9B9B7B48A86488 /* Pods */,
 				87BC913579CFC12855B9C1E7 /* Frameworks */,
@@ -219,6 +238,7 @@
 			children = (
 				85627D232587F937009DF0C8 /* EventHunter.app */,
 				852A6093258BC55C00730EB2 /* EventHunterUITests.xctest */,
+				85C27B74259127630013C23D /* EventHunterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +284,15 @@
 				85C27B69259121E40013C23D /* CustomViewManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		85C27B75259127630013C23D /* EventHunterTests */ = {
+			isa = PBXGroup;
+			children = (
+				85C27B76259127630013C23D /* EventHunterTests.swift */,
+				85C27B78259127630013C23D /* Info.plist */,
+			);
+			path = EventHunterTests;
 			sourceTree = "<group>";
 		};
 		87BC913579CFC12855B9C1E7 /* Frameworks */ = {
@@ -317,13 +346,31 @@
 			productReference = 85627D232587F937009DF0C8 /* EventHunter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		85C27B73259127630013C23D /* EventHunterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85C27B7B259127630013C23D /* Build configuration list for PBXNativeTarget "EventHunterTests" */;
+			buildPhases = (
+				85C27B70259127630013C23D /* Sources */,
+				85C27B71259127630013C23D /* Frameworks */,
+				85C27B72259127630013C23D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				85C27B7A259127630013C23D /* PBXTargetDependency */,
+			);
+			name = EventHunterTests;
+			productName = EventHunterTests;
+			productReference = 85C27B74259127630013C23D /* EventHunterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		85627D1B2587F937009DF0C8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					852A6092258BC55C00730EB2 = {
@@ -332,6 +379,10 @@
 					};
 					85627D222587F937009DF0C8 = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					85C27B73259127630013C23D = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 85627D222587F937009DF0C8;
 					};
 				};
 			};
@@ -350,6 +401,7 @@
 			targets = (
 				85627D222587F937009DF0C8 /* EventHunter */,
 				852A6092258BC55C00730EB2 /* EventHunterUITests */,
+				85C27B73259127630013C23D /* EventHunterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -370,6 +422,13 @@
 				852A6086258B882600730EB2 /* Localizable.strings in Resources */,
 				8591B528258AA605008AE1B5 /* checking.json in Resources */,
 				85627D302587F938009DF0C8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85C27B72259127630013C23D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +507,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		85C27B70259127630013C23D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85C27B77259127630013C23D /* EventHunterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -455,6 +522,11 @@
 			isa = PBXTargetDependency;
 			target = 85627D222587F937009DF0C8 /* EventHunter */;
 			targetProxy = 852A6098258BC55C00730EB2 /* PBXContainerItemProxy */;
+		};
+		85C27B7A259127630013C23D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 85627D222587F937009DF0C8 /* EventHunter */;
+			targetProxy = 85C27B79259127630013C23D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -676,6 +748,48 @@
 			};
 			name = Release;
 		};
+		85C27B7C259127630013C23D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3T7W6T7535;
+				INFOPLIST_FILE = EventHunterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mateussousa.EventHunterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventHunter.app/EventHunter";
+			};
+			name = Debug;
+		};
+		85C27B7D259127630013C23D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3T7W6T7535;
+				INFOPLIST_FILE = EventHunterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = mateussousa.EventHunterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EventHunter.app/EventHunter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -702,6 +816,15 @@
 			buildConfigurations = (
 				85627D382587F938009DF0C8 /* Debug */,
 				85627D392587F938009DF0C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85C27B7B259127630013C23D /* Build configuration list for PBXNativeTarget "EventHunterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85C27B7C259127630013C23D /* Debug */,
+				85C27B7D259127630013C23D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
