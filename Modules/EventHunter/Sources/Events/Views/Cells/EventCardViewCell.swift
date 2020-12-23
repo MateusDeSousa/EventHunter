@@ -134,11 +134,11 @@ class EventCardViewCell: UITableViewCell {
         ])
     }
     
-    public func config(urlCover: URL?, title: String?, price: Double, date: Int) {
+    public func config(urlCover: URL?, title: String?, price: Double, date: Date) {
         eventCoverImageView.loadImage(from: urlCover, placeholderImage: UIImage(named: "emptyStateCover"), successCompletion: nil)
         eventTitleLabel.text = title
         eventPriceLabel.text = price.convertInMoney()
-        eventDateLabel.text = date.convertInDate(format: "dd/MMMM/yyyy")
+        eventDateLabel.text = date.format("dd/MMMM/yyyy")
     }
 }
 

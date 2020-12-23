@@ -151,11 +151,11 @@ class DetailsEventViewCell: UITableViewCell {
         ])
     }
     
-    public func config(title: String?, price: Double, description: String?, date: Int) {
+    public func config(title: String?, price: Double, description: String?, date: Date) {
         titleLabel.text = title
         priceLabel.text = price.convertInMoney()
         descriptionLabel.text = description
-        dateLabel.text = "Data do evento: " + date.convertInDate(format: "dd/MM/yyyy")
+        dateLabel.text = "Data do evento: " + date.format("dd/MM/yyyy")
     }
 }
 
