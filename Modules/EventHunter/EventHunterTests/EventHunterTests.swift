@@ -44,7 +44,7 @@ class EventHunterTests: XCTestCase {
             case .success(let data):
                 do {
                     let eventList = try JSONDecoder().decode(EventModel.self, from: data)
-                    XCTAssertTrue(eventList.date > 0)
+                    XCTAssertTrue(eventList.date.format("dd/MM/yyyy") == "20/08/2018" )
                 } catch {
                     XCTFail(error.localizedDescription)
                 }
