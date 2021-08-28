@@ -11,7 +11,7 @@ public class APIRepository {
     
     public init() { }
     
-    let baseURL = "http://5f5a8f24d44d640016169133.mockapi.io/api"
+	let baseURL = "http://localhost:3001"
     
     public func getAllEvents(completion: @escaping (Result<Data, Error>) -> Void) {
         let endPoint = "/events"

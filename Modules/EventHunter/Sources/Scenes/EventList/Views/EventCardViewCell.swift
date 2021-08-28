@@ -1,10 +1,3 @@
-//
-//  EventCardViewCell.swift
-//  EventHunter
-//
-//  Created by Mateus Sousa on 15/12/20.
-//
-
 import UIKit
 import mCore
 
@@ -15,9 +8,6 @@ class EventCardViewCell: UITableViewCell {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .cardBackgroundColor
-        view.clipsToBounds = false
-        view.cornerRadius(of: 15)
-        view.applyShadow()
         return view
     }()
     
@@ -84,7 +74,21 @@ class EventCardViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		eventCoverImageView.image = nil
+		eventTitleLabel.text = nil
+		eventDateLabel.text = nil
+		eventPriceLabel.text = nil
+	}
     
+	override func draw(_ rect: CGRect) {
+		super.draw(rect)
+		containerCardView.cornerRadius(of: 15)
+		containerCardView.applyShadowForRounded(offset: CGSize(width: 2, height: 2), radius: 8)
+	}
+	
     //MARK: Functions to build components in the view
     private func setupCell() {
         selectionStyle = .none

@@ -1,13 +1,10 @@
-//
-//  EventModel.swift
-//  mNetwork
-//
-//  Created by Mateus Sousa on 14/12/20.
-//
-
 import Foundation
 
-struct EventModel: Decodable {
+struct EventModel: Decodable, Hashable {
+	static func == (lhs: EventModel, rhs: EventModel) -> Bool {
+		lhs.id == rhs.id
+	}
+	
     let id: String
     let title: String
     let description: String
@@ -19,7 +16,7 @@ struct EventModel: Decodable {
 }
 
 @propertyWrapper
-struct DateCustom: Decodable {
+struct DateCustom: Decodable, Hashable {
     var wrappedValue: Date
     
     init(from decoder: Decoder) throws {

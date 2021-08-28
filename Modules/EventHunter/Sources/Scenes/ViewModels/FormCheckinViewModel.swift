@@ -1,14 +1,7 @@
-//
-//  FormCheckinViewModel.swift
-//  EventHunter
-//
-//  Created by Mateus Sousa on 16/12/20.
-//
-
 import UIKit
 import mNetwork
 
-class FormCheckinViewModel: EventViewModel, CustomViewManager {
+class FormCheckinViewModel {
     
     typealias CustomView = FormCheckinCustomView
     
@@ -32,7 +25,7 @@ class FormCheckinViewModel: EventViewModel, CustomViewManager {
     func setupNavigation(_ navigation: UINavigationController?) { }
     
     private func setViewDelegate() {
-        customView.delegate = self
+//        customView.delegate = self
     }
     
     private func runCheckin(id: Int, name: String, email: String) {
@@ -42,7 +35,7 @@ class FormCheckinViewModel: EventViewModel, CustomViewManager {
                 if let _ = error {
                     self?.showDialogError(titleError: NSLocalizedString("error", comment: ""), messageError: NSLocalizedString("error-checkin-message", comment: ""))
                 }else {
-                    self?.customView.startCompleteCheckin()
+//                    self?.customView.startCompleteCheckin()
                 }
             }
             

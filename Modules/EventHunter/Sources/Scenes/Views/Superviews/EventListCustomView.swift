@@ -1,10 +1,3 @@
-//
-//  EventListCustomView.swift
-//  EventHunter
-//
-//  Created by Mateus Sousa on 15/12/20.
-//
-
 import UIKit
 
 class EventListCustomView: UIView {
@@ -74,8 +67,14 @@ class EventListCustomView: UIView {
     
     public func reloadTableView() {
         eventTableView.reloadData()
-        eventTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+		scrollToTop()
     }
+	
+	private func scrollToTop() {
+		guard eventTableView.visibleCells.count > 0 else { return }
+		eventTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+	}
+	
 }
 
 

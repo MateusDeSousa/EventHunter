@@ -31,4 +31,14 @@ public extension UIView {
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.main.scale
     }
+	
+	func applyShadowForRounded(color: UIColor = .black, opacity: Float = 0.16,
+							   offset: CGSize = CGSize(width: 2, height: 2), radius: CGFloat = 5) {
+		layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
+		layer.shadowColor   = color.cgColor
+		layer.shadowOpacity = opacity
+		layer.shadowOffset  = offset
+		layer.shadowRadius  = radius
+		layer.masksToBounds = false
+	}
 }

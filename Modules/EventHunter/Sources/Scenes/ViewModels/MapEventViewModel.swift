@@ -1,14 +1,7 @@
-//
-//  MapEventViewModel.swift
-//  EventHunter
-//
-//  Created by Mateus Sousa on 16/12/20.
-//
-
 import UIKit
 import MapKit
 
-class MapEventViewModel: NSObject, EventViewModel, CustomViewManager {
+class MapEventViewModel: NSObject {
     
     typealias CustomView = MapEventCustomView
     
@@ -37,7 +30,7 @@ class MapEventViewModel: NSObject, EventViewModel, CustomViewManager {
     func setupNavigation(_ navigation: UINavigationController?) { }
     
     private func setViewDelegate() {
-        customView.delegate = self
+//        customView.delegate = self
     }
     
     func centerToLocation( _ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
@@ -45,13 +38,13 @@ class MapEventViewModel: NSObject, EventViewModel, CustomViewManager {
             center: location.coordinate,
             latitudinalMeters: regionRadius,
             longitudinalMeters: regionRadius)
-        customView.mapView.setRegion(coordinateRegion, animated: true)
+//        customView.mapView.setRegion(coordinateRegion, animated: true)
     }
     
     func setPointLocation(_ coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        customView.mapView.addAnnotation(annotation)
+//        customView.mapView.addAnnotation(annotation)
     }
 }
 
