@@ -1,10 +1,3 @@
-//
-//  DetailsEventViewCell.swift
-//  EventHunter
-//
-//  Created by Mateus Sousa on 15/12/20.
-//
-
 import UIKit
 
 protocol DetailsEventViewCellDelegate {

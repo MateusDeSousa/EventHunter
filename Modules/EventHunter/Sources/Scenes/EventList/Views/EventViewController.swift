@@ -98,6 +98,10 @@ extension EventListViewController: EventListViewModelDelegate {
 		refreshControl?.endRefreshing()
 	}
 	
+	func presentController(_ controller: UIViewController) {
+		present(controller, animated: true, completion: nil)
+	}
+	
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource

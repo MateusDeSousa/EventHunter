@@ -64,11 +64,11 @@ extension EventListViewModel {
 	}
 	
 	func didSelect(at indexPath: IndexPath) {
-//		let eventSelected = events[indexPath.row]
-//		let viewModel = DetailsEventViewModel(model: eventSelected)
-//        let controller = EventViewController(viewModel: viewModel)
-//        controller.modalPresentationStyle = .fullScreen
-//        refController?.present(controller, animated: true, completion: nil)
+		let eventSelected = eventsOrdened[indexPath.row]
+		let viewModel = EventDetailViewModel(model: eventSelected)
+		let controller = EventDetailViewController(viewModel: viewModel)
+        controller.modalPresentationStyle = .fullScreen
+		delegate?.presentController(controller)
 	}
     
 }
