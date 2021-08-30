@@ -21,4 +21,4 @@ jobs:
     - name: install pods
       run: pod install
     - name: build project
-      run: xcodebuild build -workspace EventHunter.xcworkspace -scheme EventHunter -destination "platform=iOS Simulator,OS=14.2,name=iPhone 12 pro"
+      run: xcodebuild build -workspace EventHunter.xcworkspace -scheme EventHunter -destination "platform=iOS Simulator,OS=14.4,name=iPhone 12 pro"
