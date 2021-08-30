@@ -106,6 +106,24 @@ extension EventDetailViewController: EventDetailViewModelDelegate {
 		dismiss(animated: true, completion: nil)
 	}
 	
+    func presentController(_ controller: UIViewController) {
+        present(controller, animated: true, completion: nil)
+    }
+    
+    func getTableView() -> UITableView {
+        return detailsTableView
+    }
+    
+    func getCoverImage() -> UIImageView {
+        return coverImageView
+    }
+    
+    func resetViews() {
+        view.insertSubview(coverImageView, at: 0)
+        view.insertSubview(detailsTableView, at: 1)
+        setupAnchors()
+    }
+    
 }
 
 //MARK: - UITableViewDataSource
