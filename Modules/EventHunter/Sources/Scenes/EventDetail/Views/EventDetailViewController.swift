@@ -93,6 +93,7 @@ extension EventDetailViewController {
 
 //MARK: - Actions
 extension EventDetailViewController: EventDetailViewModelDelegate {
+	
 	func takeView() -> UIView {
 		return view
 	}

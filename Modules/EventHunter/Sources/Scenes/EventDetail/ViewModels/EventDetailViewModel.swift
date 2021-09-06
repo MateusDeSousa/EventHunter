@@ -3,23 +3,6 @@ import mNetwork
 import MapKit
 import CoreLocation
 
-protocol EventDetailViewModelProtocol: AnyObject {
-	var delegate: EventDetailViewModelDelegate? { get set }
-	func closeBtnTapped()
-	func shareBtnTapped()
-	func getCell(in tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell
-	func numberOfRows() -> Int
-	func willDisplay(_ tableView: UITableView, for cell: UITableViewCell, at indexPath: IndexPath)
-	func takeCoverImageUrl() -> URL?
-}
-
-protocol EventDetailViewModelDelegate: AnyObject {
-	func dismissController()
-	func takeView() -> UIView
-	func presentController(_ viewController: UIViewController, animated: Bool)
-	func restoreSubviewsAfterScreenshot()
-}
-
 final class EventDetailViewModel: EventDetailViewModelProtocol {
     
     private let model: EventModel
