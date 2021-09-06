@@ -15,6 +15,9 @@ protocol EventDetailViewModelProtocol: AnyObject {
 
 protocol EventDetailViewModelDelegate: AnyObject {
 	func dismissController()
+	func takeView() -> UIView
+	func presentController(_ viewController: UIViewController, animated: Bool)
+	func restoreSubviewsAfterScreenshot()
 }
 
 final class EventDetailViewModel: EventDetailViewModelProtocol {
@@ -36,7 +39,9 @@ extension EventDetailViewModel {
 	}
 	
 	func shareBtnTapped() {
-		
+		guard let screenshotImage = processScreenshot() else { return }
+		let activityViewController = UIActivityViewController(activityItems: [model.title, screenshotImage], applicationActivities: nil)
+		delegate?.presentController(activityViewController, animated: true)
 	}
 	
 	func takeCoverImageUrl() -> URL? {
@@ -70,48 +75,49 @@ extension EventDetailViewModel {
 }
 
 extension EventDetailViewModel {
+	
+	private func processScreenshot() -> UIImage? {
+		guard let tableView = delegate?.takeView().subviews.first(where: { $0 is UITableView }) as? UITableView,
+			  let coverImage = delegate?.takeView().subviews.first(where: { $0 is UIImageView }) as? UIImageView
+		else { return nil }
+		
+		let initialOffset = tableView.contentOffset
+		
+		let size = getScreenshotSize(with: tableView)
+		prepareForScreenshot(tableView)
+		let imageResult = performScreenshot(of: [coverImage, tableView], contentSize: size)
+		
+		delegate?.restoreSubviewsAfterScreenshot()
+		tableView.contentOffset = initialOffset
+		
+		return imageResult
+	}
+	
+	private func getScreenshotSize(with tableView: UITableView) -> CGSize {
+		var contentSize = tableView.contentSize
+		contentSize.height += 80
+		return contentSize
+	}
+	
+	private func prepareForScreenshot(_ tableView: UITableView) {
+		tableView.contentOffset = .zero
+		tableView.frame = CGRect(x: 0, y: 170, width: tableView.contentSize.width, height: tableView.contentSize.height)
+		tableView.backgroundColor = .clear
+	}
+	
+	private func performScreenshot(of elements: [UIView], contentSize: CGSize) -> UIImage? {
+		UIGraphicsBeginImageContextWithOptions(contentSize, false, UIScreen.main.scale)
+		let tempView = UIView()
+		elements.forEach({ tempView.addSubview($0) })
+		
+		guard let currentContext = UIGraphicsGetCurrentContext() else { return nil }
+		tempView.layer.render(in: currentContext)
+		
+		let result = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+		return result
+	}
     
-    func shareButtonPressed() {
-//        guard let image = screenshot() else { return }
-//        let activityViewController = UIActivityViewController(activityItems: [model.title, image], applicationActivities: nil)
-//        refController?.present(activityViewController, animated: true, completion: nil)
-    }
-    
-//    func screenshot() -> UIImage? {
-//        let tableView = customView.detailsTableView
-//        let imageCover = customView.coverImageView
-//
-//        var contentSize = tableView.contentSize
-//        contentSize.height += 80
-//        UIGraphicsBeginImageContextWithOptions(contentSize, false, UIScreen.main.scale)
-//
-//        // save initial values
-//        let savedContentOffset = tableView.contentOffset
-//
-//        tableView.contentOffset = CGPoint(x: 0, y: 0)
-//        tableView.frame = CGRect(x: 0, y: 170, width: tableView.contentSize.width, height: tableView.contentSize.height)
-//        customView.detailsTableView.backgroundColor = UIColor.clear
-//
-//        let tempView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.contentSize.width, height: contentSize.height))
-//
-//        tempView.addSubview(imageCover)
-//        tempView.addSubview(tableView)
-//
-//        tempView.layer.render(in: UIGraphicsGetCurrentContext()!)
-//
-//        let image = UIGraphicsGetImageFromCurrentImageContext()
-//
-//        // and return everything back
-//        customView.insertSubview(imageCover, at: 0)
-//        customView.insertSubview(tableView, at: 1)
-//
-//        // restore saved settings
-//        tableView.contentOffset = savedContentOffset
-//        customView.restoreConstraints()
-//
-//        UIGraphicsEndImageContext();
-//        return image
-//    }
 }
 
 extension EventDetailViewModel: DetailsEventViewCellDelegate {

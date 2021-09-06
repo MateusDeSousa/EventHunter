@@ -93,6 +93,13 @@ extension EventDetailViewController {
 
 //MARK: - Actions
 extension EventDetailViewController: EventDetailViewModelDelegate {
+	func takeView() -> UIView {
+		return view
+	}
+	
+	func presentController(_ viewController: UIViewController, animated: Bool) {
+		present(viewController, animated: animated, completion: nil)
+	}
 	
 	@objc private func onCloseButton() {
 		viewModel.closeBtnTapped()
@@ -104,6 +111,12 @@ extension EventDetailViewController: EventDetailViewModelDelegate {
 	
 	func dismissController() {
 		dismiss(animated: true, completion: nil)
+	}
+	
+	func restoreSubviewsAfterScreenshot() {
+		view.insertSubview(coverImageView, at: 0)
+		view.insertSubview(detailsTableView, at: 1)
+		setupAnchors()
 	}
 	
 }
